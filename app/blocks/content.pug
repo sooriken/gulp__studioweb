@@ -1,0 +1,82 @@
+mixin content
+    .content
+        // кнопка бургер-меню
+        a.burger-button(href="#" id="sidenavOpen") 
+            .burger-button__line
+            .burger-button__line
+            .burger-button__line
+        // первый блок
+        .welcome
+            .welcome-bg.welcome-bg--left
+            .welcome-bg.welcome-bg--right
+            .welcome__logo
+                .welcome__logo-image PureStudio
+                .welcome__logo-geo Санкт-Петербург <br> м. Сенная площадь
+            .welcome__inner
+                .welcome__title Работай <br> вебкам моделью
+                a.button.button--work(href="#")
+                    span Работать
+                    .button-image + 
+        // блок "заработок"
+        .earn
+            .earn__title Зарабатывать от 1000$ в месяц реально
+            .earn__inner
+                .earn__item Оставь заявку  наш сотрудник напишет тебе  ближайшее время
+                .earn__item.earn__item--blue Пройди обучение. Мы даем полный объем информации для работы с нуля
+                .earn__item.earn__item--blue Оставь заявку  наш сотрудник напишет тебе  ближайшее время
+                .earn__item Пройди обучение. Мы даем полный объем информации для работы с нуля
+        // блок "поддержка"
+        .support
+            .support-list
+                .support-list__inner
+                    .support-list__item выплаты
+                .support-list__inner
+                    .support-list__item 
+                        .support-list__item-text постановка
+                        .support-list__item-text ракурса
+                .support-list__inner
+                    .support-list__item поддержка
+                .support-list__inner
+                    .support-list__item 
+                        .support-list__item-text продвижение
+                        .support-list__item-text на площадках
+            .support__splitter
+            .support-admin
+                .support-admin__title Наша команда администраторов поможет во всём остальном
+                .support-emoji
+                    .support-emoji__item
+                    .support-emoji__item
+                    .support-emoji__item
+        // блок "про деньги"
+        .money
+            .money__title 
+                .money__title-text Про деньги
+            .money__inner
+                .money__ask Сколько я могу зарабатывать?
+                .money-form
+                    .money-form__title Воспользуйтесь калькулятором для расчета возможного дохода!
+                    .money__forms
+                        .money-form__inner
+                            .money-form__label Уровень модели
+                            a.money-form__dropdown(href="#")
+                        .money-form__inner
+                            .money-form__label Кол-во смен в неделю
+                            a.money-form__dropdown(href="#")
+                        .money-form__inner
+                            .money-form__label Доход в месяц:
+                            .money-form__result 
+
+        // боковая навигация
+        .side-nav__placeholder.side-nav__placeholder--hidden(id="sidenavPlaceholder")
+        .side-nav.side-nav--hidden(id="sidenav")
+            .side-nav__close-inner
+                a.side-nav__close(href="#" id="sidenavClose") ✕
+            .side-nav__inner
+                // "--active" модификатор
+                a.side-nav__button.side-nav__button--active(href="#") Работа в студии
+                a.side-nav__button(href="#") Работа на дому
+                a.side-nav__button(href="#") Мы предлагаем
+                a.side-nav__button(href="#") Оплата
+                a.side-nav__button(href="#") Частые вопросы
+        
+        
