@@ -1,7 +1,7 @@
 mixin content
     .content
         // кнопка бургер-меню
-        a.burger-button(href="#" id="sidenavOpen") 
+        .burger-button(id="sidenavOpen") 
             .burger-button__line
             .burger-button__line
             .burger-button__line
@@ -57,20 +57,36 @@ mixin content
                     .money-form__title Воспользуйтесь калькулятором для расчета возможного дохода!
                     .money__forms
                         .money-form__inner
-                            .money-form__label Уровень модели
-                            a.money-form__dropdown(href="#")
+                            .money-form__label Уровень модели:
+                            .money-form__item
+                                .money-form__item-price Начинающая
+                                .money-form__item-icon
+                                .money-form__dropdown
+                                    .money-form__dropdown-text Начинающая
+                                    .money-form__dropdown-text Опытная
+                                    .money-form__dropdown-text Топ модель
                         .money-form__inner
-                            .money-form__label Кол-во смен в неделю
-                            a.money-form__dropdown(href="#")
+                            .money-form__label Кол-во смен в неделю:
+                            .money-form__item
+                                .money-form__item-price 1
+                                .money-form__item-icon
+                                .money-form__dropdown
+                                    .money-form__dropdown-text 1
+                                    .money-form__dropdown-text 2
+                                    .money-form__dropdown-text 3
+                                    .money-form__dropdown-text 4
+                                    .money-form__dropdown-text 5
+                                    .money-form__dropdown-text 6
+                                    .money-form__dropdown-text 7
                         .money-form__inner
                             .money-form__label Доход в месяц:
-                            .money-form__result 
+                            .money-form__result 2$
 
         // боковая навигация
         .side-nav__placeholder.side-nav__placeholder--hidden(id="sidenavPlaceholder")
         .side-nav.side-nav--hidden(id="sidenav")
             .side-nav__close-inner
-                a.side-nav__close(href="#" id="sidenavClose") ✕
+                .side-nav__close(id="sidenavClose") ✕
             .side-nav__inner
                 // "--active" модификатор
                 a.side-nav__button.side-nav__button--active(href="#") Работа в студии
