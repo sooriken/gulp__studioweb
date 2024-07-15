@@ -58,19 +58,21 @@ mixin content
                     .money__forms
                         .money-form__inner
                             .money-form__label Уровень модели:
-                            .money-form__item
-                                .money-form__item-price Начинающая
+                            .money-form__item(id="dropdownLevelButton")
+                                .money-form__item-price(id="dropdownLevelDisplay") Начинающая
                                 .money-form__item-icon
-                                .money-form__dropdown
+                                // "--hidden" modifier
+                                .money-form__dropdown.money-form__dropdown--hidden(id="dropdownTexts")
                                     .money-form__dropdown-text Начинающая
                                     .money-form__dropdown-text Опытная
                                     .money-form__dropdown-text Топ модель
                         .money-form__inner
                             .money-form__label Кол-во смен в неделю:
-                            .money-form__item
-                                .money-form__item-price 1
+                            .money-form__item(id="dropdownValueButton")
+                                .money-form__item-price(id="dropdownValueDisplay") 1
                                 .money-form__item-icon
-                                .money-form__dropdown
+                                // "--hidden" modifier
+                                .money-form__dropdown.money-form__dropdown--hidden(id="dropdownValues")
                                     .money-form__dropdown-text 1
                                     .money-form__dropdown-text 2
                                     .money-form__dropdown-text 3
@@ -80,8 +82,27 @@ mixin content
                                     .money-form__dropdown-text 7
                         .money-form__inner
                             .money-form__label Доход в месяц:
-                            .money-form__result 2$
-
+                            .money-form__result(id="dropdownResultDisplay") 200$   
+        // блок "про безопасность"
+        .safety
+            .safety__title
+                .safety__title-text Про безопасность 
+            .safety__inner
+                .safety__ask Почему ты можешь не переживать что тебя узнают на улице?
+                .safety-item__inner
+                    .safety-item
+                        .safety-item__text Господа, сложившаяся структура организации требует анализа дальнейших направлений развития. Являясь всего лишь частью общей картины, сторонники тоталитаризма в науке, вне зависимости от их уровня, должны быть преданы социально-демократической анафеме.
+                        .safety-item__image
+                    .safety-item
+                        .safety-item__text Кстати, сторонники тоталитаризма в науке неоднозначны и будут объединены в целые кластеры себе подобных! Есть над чем задуматься: базовые сценарии поведения пользователей формируют глобальную экономическую сеть и при этом — в равной степени предоставлены сами себе.
+                        .safety-item__image
+                    .safety-item
+                        .safety-item__text Безусловно, социально-экономическое развитие говорит о возможностях укрепления моральных ценностей. Также как понимание сути ресурсосберегающих технологий обеспечивает актуальность укрепления моральных ценностей.
+                        .safety-item__image
+                    .safety-item
+                        .safety-item__text Есть над чем задуматься: сделанные на базе интернет-аналитики выводы объединены в целые кластеры себе подобных. В целом, конечно, понимание сути ресурсосберегающих технологий представляет собой интересный эксперимент проверки прогресса профессионального сообщества.
+                        .safety-item__image
+                
         // боковая навигация
         .side-nav__placeholder.side-nav__placeholder--hidden(id="sidenavPlaceholder")
         .side-nav.side-nav--hidden(id="sidenav")
