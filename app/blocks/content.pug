@@ -6,7 +6,7 @@ mixin content
             .burger-button__line
             .burger-button__line
         // первый блок
-        .welcome
+        .welcome(id="blockWelcome")
             .welcome-bg.welcome-bg--left
             .welcome-bg.welcome-bg--right
             .welcome__logo
@@ -18,7 +18,7 @@ mixin content
                     span Работать
                     .button-image + 
         // блок "заработок"
-        .earn
+        .earn(id="blockEarn")
             .earn__title Зарабатывать от 1000$ в месяц реально
             .earn__inner
                 .earn__item Оставь заявку  наш сотрудник напишет тебе  ближайшее время
@@ -26,29 +26,32 @@ mixin content
                 .earn__item.earn__item--blue Оставь заявку  наш сотрудник напишет тебе  ближайшее время
                 .earn__item Пройди обучение. Мы даем полный объем информации для работы с нуля
         // блок "поддержка"
-        .support
+        .support(id="blockSupport")
+            .support__title Наша команда администраторов поможет во всём остальном
+            .support__emoji
+            .support__emoji
             .support-list
                 .support-list__inner
                     .support-list__item выплаты
-                .support-list__inner
-                    .support-list__item 
-                        .support-list__item-text постановка
-                        .support-list__item-text ракурса
-                .support-list__inner
+                    .support-list__item.support-list__item--main выплаты
                     .support-list__item поддержка
-                .support-list__inner
-                    .support-list__item 
-                        .support-list__item-text продвижение
-                        .support-list__item-text на площадках
-            .support__splitter
-            .support-admin
-                .support-admin__title Наша команда администраторов поможет во всём остальном
-                .support-emoji
-                    .support-emoji__item
-                    .support-emoji__item
-                    .support-emoji__item
+                    .support-list__item поддержка
+                    .support-list__item.support-list__item--main продвижение на площадках
+                    .support-list__item продвижение на площадках
+                    .support-list__item.support-list__item--main постановка ракурса
+                    .support-list__item постановка ракурса
+        // блок "флиртуй"
+        .flirt(id="blockFlirt")
+            .flirt__inner
+                .flirt__emoji
+                .flirt__emoji
+                .flirt__title Флиртуй. Общайся. Удивляй.
+                .flirt__subtitle Общайся с зрителями и интересуйся их предпочтениями, создавай приятную романтическую атмосферу. Личный менеджер поможет с созданием твоего уникального шоу.
+                a.button.button--flirt(href="#")
+                    span Хочу попробовать 
+                    .button-image + 
         // блок "про деньги"
-        .money
+        .money(id="blockMoney")
             .money__title 
                 //.money__title-text Про деньги
                 .money__title-text
@@ -86,7 +89,7 @@ mixin content
                             .money-form__label Доход в месяц:
                             .money-form__result(id="dropdownResultDisplay") 200$   
         // блок "про безопасность"
-        .safety
+        .safety(id="blockSafety")
             .safety__title
                 .safety__title-text Про безопасность 
             .safety__inner
@@ -109,6 +112,50 @@ mixin content
                         .safety-item__image
                         .safety-item__title Локация
                         .safety-item__text Ты выбираешь как и на какие страны и регионы вести трансляцию, а твой личный менеджер подскажет как делать это максимально эффективно.
+        // блок "работай с нами"
+        .collab(id="blockCollab")
+            .collab__inner
+                .collab-item 
+                    .collab-item__title Свободу действий
+                    .collab-item__text Работай в удобное для тебя время, составляй график работы как тебе угодно.
+            .collab__inner
+                .collab-item
+                    .collab-item__title Тех. поддержку
+                    .collab-item__text Тебе не нужно разбираться во всех технических тонкостях. Всё это мы берём на себя
+                .collab__title Работая с нами ты получишь
+                .collab-item
+                    .collab-item__title Обучение и консультации
+                    .collab-item__text Личный менеджер обучит всем аспектам работы и будет постоянно развивать тебя.
+            .collab__inner
+                .collab-item
+                    .collab-item__title Стабильные выплаты
+                    .collab-item__text Деньги приходят раз в 2 недели в любой банк или платёжную систему. Так же, есть возможность получить досрочную выплату
+                .collab-item
+                    .collab-item__title Популярные площадки
+                    .collab-item__text Мы работаем с самыми популярными площадками со всего мира.
+        // блок "отзывы"
+        .review
+            .review__title 
+                .review__title-text Про доверие
+            .review__inner  
+                .review-item__inner
+                    .review-item 
+                        .review-item__header
+                            .review-item__header-logo
+                            .review-item__header-name Алиса
+                        .review-item__text Хочу сказать спасибо за такую колоссальную поддержку! Мне очень круто и комфортно работать и меня безумно радует результат учитывая, что я только начала этим заниматься. Просто в соло я не так хорошо справлялась и уже было хотела забить на это всё, но тут счастливый случай, появился стимул работать дальше)
+                    .review-item
+                        .review-item__header
+                            .review-item__header-logo
+                            .review-item__header-name Диана
+                        .review-item__text Я работаю с этими ребятами уже больше года и мне очень комфортно, они стали для меня второй семьёй, тебя всегда примут любой, помогут, поддержат, не будут врать. Комнаты комфортные, график можно подстроить под себя, все проблемы с сайтами и техникой быстро решаются, никто не оставит тебя наедине с трудностями. Некоторые ребята из этой студии стали мне настоящими друзьями. Очень советую это место!
+                    .review-item
+                        .review-item__header
+                            .review-item__header-logo 
+                            .review-item__header-name Кристина
+                        .review-item__text Благодарю за невероятную поддержку и отличные условия работы. Особенно благодарна администраторам за доброжелательность и помощь. Вы мотивируете меня зарабатывать больше. Спасибо за все!
+                .review-item__title Отзывы наших моделей
+            
         // боковая навигация
         .side-nav__placeholder.side-nav__placeholder--hidden(id="sidenavPlaceholder")
         .side-nav.side-nav--hidden(id="sidenav")
@@ -116,10 +163,10 @@ mixin content
                 .side-nav__close(id="sidenavClose") ✕
             .side-nav__inner
                 // "--active" модификатор
-                a.side-nav__button.side-nav__button--active(href="#") Работа в студии
-                a.side-nav__button(href="#") Работа на дому
-                a.side-nav__button(href="#") Мы предлагаем
-                a.side-nav__button(href="#") Оплата
-                a.side-nav__button(href="#") Частые вопросы
+                a.side-nav__button(href="#blockEarn") Заработок
+                a.side-nav__button(href="#blockFlirt") Создай своё шоу
+                a.side-nav__button(href="#blockMoney") Калькулятор дохода
+                a.side-nav__button(href="#blockSafety") Про безопасность
+                a.side-nav__button(href="#blockCollab") Работай с нами
         
         

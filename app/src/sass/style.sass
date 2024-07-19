@@ -7,15 +7,37 @@
 //$colorMain:  #01687B
 //$colorDark:  #023F4A
 
-//$colorLight: #d3e4e7
-//$colorGray:  #82acab
-//$colorMain:  #2a777c    
-//$colorDark:  #0b4b54
-
 $colorLight: #F2F7FB
-$colorGray:  #AA9F89
+$colorGray:  #D1CBC6
 $colorMain:  #497E76  
 $colorDark:  #436A59
+ 
+@mixin titleBlock
+    font-size: 45px
+    text-align: center
+    display: flex
+    flex-direction: column
+    justify-content: center
+    font-weight: bold
+
+@mixin title
+    font-size: 60px
+    text-align: center
+    position: relative
+    display: inline-block
+    white-space: nowrap
+
+@mixin titleAfter
+    display: block
+    content: ""
+    width: 100%
+    height: 2px
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+    background: linear-gradient(90deg,$colorLight, $colorMain, $colorLight)
+    
 
 
 // burger button
@@ -25,8 +47,8 @@ $colorDark:  #436A59
     height: 48px
     background-color: $colorMain
     border-radius: 50%
-    top: 20px
-    right: 20px
+    top: 25px
+    right: 25px
     z-index: 15 
     cursor: pointer
     &__line
@@ -46,8 +68,14 @@ $colorDark:  #436A59
 // button
 .button
     &--work
-        margin: 60px auto 0
+        margin: 50px auto 0
         padding-right: 48px
+    &--flirt
+        margin: 50px auto 0
+        padding-right: 48px
+        max-width: 250px
+        background-color: $colorLight
+        color: $colorDark
     &-image
         position: absolute
         top: 50%
@@ -115,7 +143,7 @@ $colorDark:  #436A59
         color: $colorDark
         z-index: 10
         &-geo
-            margin-top: 20px
+            margin-top: 25px
             font-size: 16px
             color: #000
     &__title
@@ -126,121 +154,128 @@ $colorDark:  #436A59
 .earn
     display: grid
     min-height: 600px
-    padding: 50px 200px
+    padding: 100px 200px 50px
     grid-template-columns: 1fr 2fr
-    gap: 40px
+    gap: 50px
     font-size: 32px
     &__title
-        padding: 20px
-        border-radius: 20px
-        color: $colorLight
-        border: 2px solid $colorMain
-        background: linear-gradient(180deg, $colorMain 0%, $colorLight 100%)
+        @include titleBlock
     &__inner
         display: grid
         grid-template-columns: 1fr 1fr
-        grid-template-raws: 1fr 1fr
-        gap: 20px
+        grid-template-rows: 1fr 1fr
+        gap: 50px
     &__item
         color: $colorMain
         border: 2px solid $colorMain
-        padding: 20px
-        border-radius: 20px
+        padding: 25px
+        border-radius: 25px
         &--blue
             background: linear-gradient(180deg, $colorMain 0%, $colorLight 100%)
             color: $colorLight
             
 // support блок
 .support
-    display: grid
-    grid-template-columns: 1fr 2px 1fr
-    gap: 20px
-    padding: 50px 200px
-    min-height: 600px
+    padding: 50px 200px 100px
+    &__title
+        margin: 0 auto
+        padding-bottom: 25px
+        text-align: center
+        font-size: 45px
+        font-weight: bold
+        position: relative
+        &::after
+            display: block
+            @include titleAfter
     &-list
-        display: flex
-        flex-direction: column
+        overflow: hidden
+        position: relative
+        width: 100%
+        height: 100px
+        &::after
+            display: block
+            content: ""
+            position: absolute
+            left: 0
+            height: 100%
+            width: 50px
+            background: linear-gradient(90deg, $colorLight 50%, transparent 100%)
+            z-index: 17
+        &::before
+            display: block
+            content: ""
+            position: absolute
+            right: 0
+            height: 100%
+            width: 50px
+            background: linear-gradient(270deg, $colorLight 50%, transparent 100%)
+            z-index: 17
         &__inner
+            display: flex
+            position: absolute
+            left: 50%
+            transform: translateX(-50%)
+        &__item
             flex-grow: 1
-            &:nth-child(1) > .support-list__item
-                margin: 10% 0 0 20%
-            &:nth-child(2) > .support-list__item
-                margin: 40% 0 0 30%
-            &:nth-child(3) > .support-list__item 
-                margin: 20% 0 0 40%
-            &:nth-child(4) > .support-list__item
-                margin: 30% 0 0 10%
-            &:nth-child(5) > .support-list__item
-                margin: 20% 0 0 10%
-        &__item
-            font-size: 16px
-            display: inline-block
-            padding: 10px 20px
-            background: $colorMain
-            border-radius: 20px
-            margin: 20px
-            color: $colorLight
+            border: 1px solid $colorMain
+            border-radius: 25px
+            padding: 25px
+            margin-top: 25px
             text-align: center
-           
-    &__splitter
-        height: 100%
-        width: 2px
-        background: linear-gradient(180deg,$colorLight, $colorMain, $colorLight)
-    &-admin
-        &__title
-            text-align: center
-            font-size: 48px
-            font-weight: bold
-    &-emoji
-        &__item
-            width: 100px
-            height: 100px
-            border-radius: 50%
-            border: 2px solid $colorMain
-            margin: 20px
-            display: inline-block
-            &:nth-child(1)
-                margin: 5% 35%
-            &:nth-child(2)
-                margin: 10% 15%
-            &:nth-child(3)
-                margin: 15% 20%
-            
+            white-space: nowrap
+            z-index: 16
+            line-height: 18px
+            &--main
+                background-color: $colorMain
+                color: $colorLight
+// блок "флиртуй"
+.flirt
+    padding: 100px 200px
+    &__inner
+        background-color: $colorMain
+        border-radius: 50px
+        padding: 50px
+        color: $colorLight
+        position: relative
+    &__emoji
+        width: 15%
+        aspect-ratio: 1/1
+        background-color: $colorLight
+        border-radius: 50%
+        position: absolute
+        &:nth-child(1)
+            left: 10%
+            bottom: 20%
+        &:nth-child(2)
+            right: 5%
+            bottom: 10%
+        
+    &__title
+        text-align: center
+        font-size: 45px
+        font-weight: bold
+    &__subtitle 
+        max-width: 50%
+        margin: 50px auto 0
+        text-align: center
 // блок "про деньги"
 .money
-    padding: 50px 200px
+    padding: 100px 200px
     display: flex
     flex-direction: column
     &__title
         text-align: center
         &-text
-            font-size: 60px
-            text-align: center
-            position: relative
-            display: inline-block
-            white-space: nowrap
+            @include title
             &::after
-                display: block
-                content: ""
-                width: 100%
-                height: 2px
-                position: absolute
-                bottom: 0
-                left: 50%
-                transform: translateX(-50%)
-                background: linear-gradient(90deg,$colorLight, $colorMain, $colorLight)
+                @include titleAfter
     &__inner
         display: grid
         grid-template-columns: 1fr 1fr
-        margin-top: 40px
-        gap: 40px
+        margin-top: 50px
+        gap: 50px
     &__ask
-        font-size: 45px
-        text-align: center
-        display: flex
-        flex-direction: column
-        justify-content: center
-        font-weight: bold
+        @include titleBlock
         //text-shadow: 0px 0px 5px $colorDark, 0 0 25px $colorMain
     &__forms
         margin-top: 40px
@@ -254,14 +289,14 @@ $colorDark:  #436A59
             font-size: 30px
             text-align: center
         &__inner
-            margin-top: 20px
+            margin-top: 25px
         &__label
             font-size: 12px
         &__item
             margin-top: 5px
-            padding: 20px
+            padding: 25px
             background-color: $colorLight
-            border-radius: 20px
+            border-radius: 25px
             display: flex
             justify-content: space-between
             color: $colorDark
@@ -288,7 +323,7 @@ $colorDark:  #436A59
             left: 50%
             top: 0
             transform: translate(-50%, 70px)
-            border-radius: 20px
+            border-radius: 25px
             padding: 10px 20px
             z-index: 17
             visibility: visible
@@ -309,7 +344,7 @@ $colorDark:  #436A59
             margin-top: 5px
             padding: 20px 10px
             background-color: $colorLight
-            border-radius: 20px
+            border-radius: 25px
             font-size: 20px
             line-height: 20px
             color: $colorDark
@@ -317,28 +352,16 @@ $colorDark:  #436A59
             font-weight: bold
 // блок "Про безопасность"
 .safety
-    padding: 50px 200px
+    padding: 100px 200px
     display: flex
     flex-direction: column
     min-height: 600px
     &__title
         text-align: center
         &-text
-            font-size: 60px
-            text-align: center
-            position: relative
-            display: inline-block
-            white-space: nowrap
+            @include title
             &::after
-                display: block
-                content: ""
-                width: 100%
-                height: 2px
-                position: absolute
-                bottom: 0
-                left: 50%
-                transform: translateX(-50%)
-                background: linear-gradient(90deg,$colorLight, $colorMain, $colorLight)
+                @include titleAfter
     &__inner
         display: grid
         grid-template-columns: 1fr 1fr
@@ -346,12 +369,7 @@ $colorDark:  #436A59
         flex-grow: 1
         margin-top: 40px
     &__ask
-        font-size: 45px
-        text-align: center
-        display: flex
-        flex-direction: column
-        justify-content: center
-        font-weight: bold
+        @include titleBlock
     &-item
         background-color: $colorMain
         border-radius: 20px
@@ -376,6 +394,74 @@ $colorDark:  #436A59
         &__text
             font-size: 16px
             margin-top: 10px
+// блок "работая с нами"
+.collab
+    padding: 100px 200px
+    &__inner
+        display: flex
+        justify-content: space-evenly
+        margin-top: 40px
+    &-item
+        max-width: 30%
+        padding: 20px
+        border-radius: 20px
+        background-color: $colorMain
+        color: $colorLight
+        text-align: center
+        &__title
+            font-weight: bold
+            font-size: 24px
+        &__text
+            margin-top: 10px
+            font-size: 16px
+    &__title
+        max-width: 30%
+        font-size: 40px
+        font-weight: bold
+        text-align: center
+        display: flex
+        justify-content: center
+        flex-direction: column
+.review
+    padding: 100px 200px
+    &__title
+        text-align: center
+        &-text
+            @include title
+            &::after
+                @include titleAfter
+    &__inner
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 50px
+    &-item
+        margin-top: 25px
+        background-color: $colorMain
+        padding: 25px
+        border-radius: 25px
+        color: $colorLight
+        &:first-child
+            margin-top: 0
+        &__inner
+            display: flex
+            flex-direction: column
+            margin-top: 50px
+        &__header
+            display: flex
+            &-logo
+                width: 50px
+                height: 50px
+                background-color: $colorLight
+                border-radius: 50%
+            &-name
+                line-height: 50px
+                font-size: 20px
+                font-weight: bold
+                margin-left: 25px
+        &__text
+            margin-top: 25px
+        &__title
+            @include titleBlock
             
 // боковой слайд
 .side-nav__placeholder
@@ -428,9 +514,12 @@ $colorDark:  #436A59
     &__button
         margin-top: 40px
         position: relative
-        color: $colorDark
+        color: #000 
+        font-weight: bold
         &:first-child
             margin-top: 20px
+        &:hover
+            color: #000 
         &::after
             content: ''
             display: block
@@ -442,10 +531,4 @@ $colorDark:  #436A59
             transition: all .3s linear
         &:hover::after 
             width: 100%
-        &--active
-            color: #000
-            font-weight: bold
-            &::after
-                width: 100%
-                display: none
              
