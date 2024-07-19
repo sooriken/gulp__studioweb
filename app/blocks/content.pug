@@ -44,7 +44,9 @@ mixin content
         .flirt(id="blockFlirt")
             .flirt__inner
                 .flirt__emoji
+                    img.flirt__emoji-img(src="../images-min/flirt/flirt-image__1.png")
                 .flirt__emoji
+                    img.flirt__emoji-img(src="../images-min/flirt/flirt-image__2.png")
                 .flirt__title Флиртуй. Общайся. Удивляй.
                 .flirt__subtitle Общайся с зрителями и интересуйся их предпочтениями, создавай приятную романтическую атмосферу. Личный менеджер поможет с созданием твоего уникального шоу.
                 a.button.button--flirt(href="#")
@@ -54,8 +56,7 @@ mixin content
         .money(id="blockMoney")
             .money__title 
                 //.money__title-text Про деньги
-                .money__title-text
-                    img(src="../src/images/money.jpg") 
+                .money__title-text Про деньги
             .money__inner
                 .money__ask Сколько я могу зарабатывать?
                 .money-form
@@ -94,19 +95,23 @@ mixin content
                 .safety-item__inner
                     .safety-item
                         .safety-item__image
+                            img.safety-item__img(src="../images-min/safety/safety-image__1.png")
                         .safety-item__title Дистанция
                         .safety-item__text Контакт с пользователями происходит только через чат. Никакого живого контакта. Никто не будет знать твоё настоящее имя и место нахождения.
                     .safety-item
                         .safety-item__image
+                            img.safety-item__img(src="../images-min/safety/safety-image__2.png")
                         .safety-item__title Приватность
                         .safety-item__text Вся личная информация защищена нашим сервисом. Доступ к информации связанной с тобой будет иметь только твой личный менеджер
                     .safety-item
                         .safety-item__image
+                            img.safety-item__img(src="../images-min/safety/safety-image__3.png")
                         .safety-item__title Выбор
                         .safety-item__text Ты сама решаешь с кем ты хочешь вести диалог.
                         .safety-item__text Ты всегда можешь сказать нет или заблокировать пользователя.
                     .safety-item
                         .safety-item__image
+                            img.safety-item__img(src="../images-min/safety/safety-image__4.png")
                         .safety-item__title Локация
                         .safety-item__text Ты выбираешь как и на какие страны и регионы вести трансляцию, а твой личный менеджер подскажет как делать это максимально эффективно.
         // блок "работай с нами"
@@ -131,7 +136,7 @@ mixin content
                     .collab-item__title Популярные площадки
                     .collab-item__text Мы работаем с самыми популярными площадками со всего мира.
         // блок "отзывы"
-        .review
+        .review(id="blockReview")
             .review__title 
                 .review__title-text Про доверие
             .review__inner  
@@ -139,20 +144,22 @@ mixin content
                     .review-item 
                         .review-item__header
                             .review-item__header-logo
+                                img.review-item__header-img(src="../images-min/safety/safety-image__3.png")
                             .review-item__header-name Алиса
                         .review-item__text Хочу сказать спасибо за такую колоссальную поддержку! Мне очень круто и комфортно работать и меня безумно радует результат учитывая, что я только начала этим заниматься. Просто в соло я не так хорошо справлялась и уже было хотела забить на это всё, но тут счастливый случай, появился стимул работать дальше)
                     .review-item
                         .review-item__header
                             .review-item__header-logo
+                                img.review-item__header-img(src="../images-min/safety/safety-image__3.png")
                             .review-item__header-name Диана
                         .review-item__text Я работаю с этими ребятами уже больше года и мне очень комфортно, они стали для меня второй семьёй, тебя всегда примут любой, помогут, поддержат, не будут врать. Комнаты комфортные, график можно подстроить под себя, все проблемы с сайтами и техникой быстро решаются, никто не оставит тебя наедине с трудностями. Некоторые ребята из этой студии стали мне настоящими друзьями. Очень советую это место!
                     .review-item
                         .review-item__header
                             .review-item__header-logo 
+                                img.review-item__header-img(src="../images-min/safety/safety-image__3.png")
                             .review-item__header-name Кристина
                         .review-item__text Благодарю за невероятную поддержку и отличные условия работы. Особенно благодарна администраторам за доброжелательность и помощь. Вы мотивируете меня зарабатывать больше. Спасибо за все!
                 .review-item__title Отзывы наших моделей
-            
         // боковая навигация
         .side-nav__placeholder.side-nav__placeholder--hidden(id="sidenavPlaceholder")
         .side-nav.side-nav--hidden(id="sidenav")
@@ -160,10 +167,11 @@ mixin content
                 .side-nav__close(id="sidenavClose") ✕
             .side-nav__inner
                 // "--active" модификатор
-                a.side-nav__button(href="#blockEarn") Заработок
+                a.side-nav__button(href="#blockEarn") Заработок 
                 a.side-nav__button(href="#blockFlirt") Создай своё шоу
                 a.side-nav__button(href="#blockMoney") Калькулятор дохода
                 a.side-nav__button(href="#blockSafety") Про безопасность
                 a.side-nav__button(href="#blockCollab") Работай с нами
+                a.side-nav__button(href="#blockReview") Отзывы
         
         

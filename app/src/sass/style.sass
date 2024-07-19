@@ -237,12 +237,17 @@ $colorDark:  #436A59
         padding: 50px
         color: $colorLight
         position: relative
+        z-index: 17
     &__emoji
         width: 15%
         aspect-ratio: 1/1
+        position: absolute
         background-color: $colorLight
         border-radius: 50%
-        position: absolute
+        &-img
+            width: 100%
+            height: auto
+            border-radius: 50%    
         &:nth-child(1)
             left: 10%
             bottom: 20%
@@ -284,7 +289,7 @@ $colorDark:  #436A59
         background: $colorDark
         box-shadow: 0px 0px 20px 10px $colorMain
         color: $colorLight
-        border-radius: 20px
+        border-radius: 25px
         &__title
             font-size: 30px
             text-align: center
@@ -365,15 +370,15 @@ $colorDark:  #436A59
     &__inner
         display: grid
         grid-template-columns: 1fr 1fr
-        gap: 40px
+        gap: 50px
         flex-grow: 1
-        margin-top: 40px
+        margin-top: 50px
     &__ask
         @include titleBlock
     &-item
         background-color: $colorMain
-        border-radius: 20px
-        padding: 20px
+        border-radius: 25px
+        padding: 25px
         color: $colorLight
         &__inner
             display: grid
@@ -385,12 +390,21 @@ $colorDark:  #436A59
             margin: 0 auto
             aspect-ratio: 1/1
             background: $colorDark
-            border-radius: 20px
+            border-radius: 25px
+            position: relative
+        &__img
+            width: 100%
+            height: auto
+            position: absolute
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%)
+            border-radius: 25px
         &__title
             color: #fff
             font-size: 24px
             font-weight: bold
-            margin-top: 20px
+            margin-top: 25px
         &__text
             font-size: 16px
             margin-top: 10px
@@ -403,8 +417,8 @@ $colorDark:  #436A59
         margin-top: 40px
     &-item
         max-width: 30%
-        padding: 20px
-        border-radius: 20px
+        padding: 25px
+        border-radius: 25px
         background-color: $colorMain
         color: $colorLight
         text-align: center
@@ -449,17 +463,22 @@ $colorDark:  #436A59
         &__header
             display: flex
             &-logo
-                width: 50px
-                height: 50px
+                width: 75px
+                height: 75px
                 background-color: $colorLight
                 border-radius: 50%
             &-name
-                line-height: 50px
+                line-height: 75px
                 font-size: 20px
                 font-weight: bold
                 margin-left: 25px
+            &-img
+                width: 100%
+                height: auto
+                border-radius: 50%
         &__text
             margin-top: 25px
+            font-size: 16px
         &__title
             @include titleBlock
             
