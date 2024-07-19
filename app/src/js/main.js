@@ -1,5 +1,5 @@
-var dropdownResultLevel = 200;
-var dropdownResultValue = 1;
+var dropdownResultLevel = 50;
+var dropdownResultValue = 4;
 var dropdownResult = dropdownResultLevel * dropdownResultValue + "$";
 
 function dropdownValue(dropdownNumber) {
@@ -18,36 +18,27 @@ function dropdownLevel(dropdownText, dropdownTextLevel) {
 
 // listeners dropdownValues
 document.getElementById("dropdownValues").querySelectorAll('.money-form__dropdown-text')[0].addEventListener('click',function (){
-    dropdownValue(1);
-});
-document.getElementById("dropdownValues").querySelectorAll('.money-form__dropdown-text')[1].addEventListener('click',function (){
-    dropdownValue(2);
-});
-document.getElementById("dropdownValues").querySelectorAll('.money-form__dropdown-text')[2].addEventListener('click',function (){
-    dropdownValue(3);
-});
-document.getElementById("dropdownValues").querySelectorAll('.money-form__dropdown-text')[3].addEventListener('click',function (){
     dropdownValue(4);
 });
-document.getElementById("dropdownValues").querySelectorAll('.money-form__dropdown-text')[4].addEventListener('click',function (){
+document.getElementById("dropdownValues").querySelectorAll('.money-form__dropdown-text')[1].addEventListener('click',function (){
     dropdownValue(5);
 });
-document.getElementById("dropdownValues").querySelectorAll('.money-form__dropdown-text')[5].addEventListener('click',function (){
+document.getElementById("dropdownValues").querySelectorAll('.money-form__dropdown-text')[2].addEventListener('click',function (){
     dropdownValue(6);
 });
-document.getElementById("dropdownValues").querySelectorAll('.money-form__dropdown-text')[6].addEventListener('click',function (){
+document.getElementById("dropdownValues").querySelectorAll('.money-form__dropdown-text')[3].addEventListener('click',function (){
     dropdownValue(7);
 });
 
 // listeners dropdownTexts
 document.getElementById("dropdownTexts").querySelectorAll('.money-form__dropdown-text')[0].addEventListener('click',function (){
-    dropdownLevel("Начинающая", 200); 
+    dropdownLevel("Начинающая", 50); 
 });
 document.getElementById("dropdownTexts").querySelectorAll('.money-form__dropdown-text')[1].addEventListener('click',function (){
-    dropdownLevel("Опытная", 400);
+    dropdownLevel("Опытная", 100);
 });
 document.getElementById("dropdownTexts").querySelectorAll('.money-form__dropdown-text')[2].addEventListener('click',function (){
-    dropdownLevel("Топ модель", 800);
+    dropdownLevel("Топ модель", 300);
 });
 
 // dropdownLevel function
