@@ -160,6 +160,17 @@ $colorDark:  #436A59
     font-size: 32px
     &__title
         @include titleBlock
+        &-image
+            flex-grow: 1
+            position: relative
+        &-img
+            display: block
+            position: absolute
+            height: 100%
+            left: 50%
+            top: 0
+            transform: translateX(-50%)
+            width: auto
     &__inner
         display: grid
         grid-template-columns: 1fr 1fr
