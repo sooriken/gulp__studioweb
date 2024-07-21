@@ -641,7 +641,7 @@ $colorDark:  #436A59
             position: absolute
             top: 50%
             left: 0
-            transform: translateY(-50%)
+            transform: translate(25px, -50%)
             height: 50px
             width: 50px
             text-align: center
@@ -650,11 +650,13 @@ $colorDark:  #436A59
             color: $colorLight
             cursor: pointer
             z-index: 17
+            background-color: $colorDark
+            border-radius: 5px
         &-right 
             position: absolute
             top: 50%
             right: 0
-            transform: translateY(-50%)
+            transform: translate(-25px, -50%)
             height: 50px
             width: 50px
             text-align: center
@@ -663,6 +665,8 @@ $colorDark:  #436A59
             color: $colorLight
             cursor: pointer
             z-index: 17
+            background-color: $colorDark
+            border-radius: 5px
         &-title
             font-weight: bold
             font-size: 28px
