@@ -142,6 +142,12 @@ $colorDark:  #436A59
         font-size: 40px
         color: $colorDark
         z-index: 10
+        &-image
+            width: 10% 
+            margin: 0 auto
+        &-img
+            width: 100%
+            height: auto
         &-geo
             margin-top: 25px
             font-size: 16px
@@ -157,7 +163,7 @@ $colorDark:  #436A59
     padding: 100px 200px 50px
     grid-template-columns: 1fr 2fr
     gap: 50px
-    font-size: 32px
+    font-size: 24px
     &__title
         @include titleBlock
         &-image
@@ -166,24 +172,30 @@ $colorDark:  #436A59
         &-img
             display: block
             position: absolute
-            height: 100%
+            width: 100%
+            height: auto
             left: 50%
-            top: 0
-            transform: translateX(-50%)
-            width: auto
+            top: 50%
+            transform: translate(-50%, -50%)
     &__inner
         display: grid
         grid-template-columns: 1fr 1fr
         grid-template-rows: 1fr 1fr
         gap: 50px
     &__item
-        color: $colorMain
-        border: 2px solid $colorMain
+        color: $colorDark
+        border: 2px solid $colorDark
         padding: 25px
         border-radius: 25px
         &--blue
-            background: linear-gradient(180deg, $colorMain 0%, $colorLight 100%)
+            //ckground: linear-gradient(180deg, $colorMain 0%, $colorLight 100%)
+            background-color: $colorMain
             color: $colorLight
+        &-title
+            font-weight: bold
+            font-size: 32px
+        &-text
+            margin-top: 25px
             
 // support блок
 .support
@@ -223,6 +235,7 @@ $colorDark:  #436A59
             z-index: 17
         &__inner
             display: flex
+            min-width: 90%
             position: absolute
             left: 50%
             transform: translateX(-50%)
@@ -276,11 +289,17 @@ $colorDark:  #436A59
         text-align: center
 // блок "про деньги"
 .money
-    padding: 100px 200px
+    padding: 100px 200px 
     display: flex
     flex-direction: column
     &__title
         text-align: center
+        &-image
+            max-width: 50%
+            margin: 0 auto
+        &-img
+            width: 100%
+            height: auto
         &-text
             @include title
             &::after
@@ -288,8 +307,8 @@ $colorDark:  #436A59
     &__inner
         display: grid
         grid-template-columns: 1fr 1fr
-        margin-top: 50px
         gap: 50px
+        margin-top: 50px
     &__ask
         @include titleBlock
         //text-shadow: 0px 0px 5px $colorDark, 0 0 25px $colorMain
@@ -298,7 +317,7 @@ $colorDark:  #436A59
     &-form
         padding: 20px
         background: $colorDark
-        box-shadow: 0px 0px 20px 10px $colorMain
+        //box-shadow: 0px 0px 20px 10px $colorMain
         color: $colorLight
         border-radius: 25px
         &__title
@@ -368,11 +387,17 @@ $colorDark:  #436A59
             font-weight: bold
 // блок "Про безопасность"
 .safety
-    padding: 100px 200px
+    padding: 100px 200px 
     display: flex
     flex-direction: column
     min-height: 600px
     &__title
+        &-image
+            max-width: 50%
+            margin: 0 auto
+        &-img
+            width: 100%
+            height: auto
         text-align: center
         &-text
             @include title
@@ -422,17 +447,18 @@ $colorDark:  #436A59
 // блок "работая с нами"
 .collab
     padding: 100px 200px
-    &__inner
-        display: flex
-        justify-content: space-evenly
-        margin-top: 40px
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 50px
     &-item
-        max-width: 30%
+        margin-top: 25px
         padding: 25px
         border-radius: 25px
         background-color: $colorMain
         color: $colorLight
         text-align: center
+        &:first-child
+            margin-top: 0
         &__title
             font-weight: bold
             font-size: 24px
@@ -440,17 +466,33 @@ $colorDark:  #436A59
             margin-top: 10px
             font-size: 16px
     &__title
-        max-width: 30%
-        font-size: 40px
-        font-weight: bold
-        text-align: center
-        display: flex
-        justify-content: center
-        flex-direction: column
+        @include titleBlock
+        &-image
+            flex-grow: 1
+            position: relative
+        &-img
+            display: block
+            position: absolute
+            width: 100%
+            height: auto
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%)
+            background-color: $colorMain
+            border-radius: 50%
+            max-width: 512px
+            
+// блок "отзывы"
 .review
-    padding: 100px 200px
+    padding: 100px 200px 
     &__title
         text-align: center
+        &-image
+            max-width: 50%
+            margin: 0 auto
+        &-img
+            width: 100%
+            height: auto
         &-text
             @include title
             &::after
@@ -459,6 +501,7 @@ $colorDark:  #436A59
         display: grid
         grid-template-columns: 1fr 1fr
         gap: 50px
+        margin-top: 50px
     &-item
         margin-top: 25px
         background-color: $colorMain
@@ -470,7 +513,6 @@ $colorDark:  #436A59
         &__inner
             display: flex
             flex-direction: column
-            margin-top: 50px
         &__header
             display: flex
             &-logo
@@ -487,12 +529,158 @@ $colorDark:  #436A59
                 width: 100%
                 height: auto
                 border-radius: 50%
+        &__title
+            @include titleBlock
         &__text
             margin-top: 25px
             font-size: 16px
+//блок "на дому"
+.home
+    padding: 100px 200px
+    &__title
+        text-align: center
+        &-image
+            max-width: 50%
+            margin: 0 auto
+        &-img
+            width: 100%
+            height: auto
+        &-text
+            @include title
+            &::after
+                @include titleAfter
+    &__subtitle
+        @include titleBlock
+    &__inner
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 25px
+        margin-top: 50px
+        &--first
+            grid-template-columns: 1fr 3fr
+            & .home-item__title-inner
+                max-width: 50%
+    &-item
+        padding: 25px
+        background-color: $colorMain
+        color: $colorLight
+        border-radius: 25px
+        position: relative
+        font-size: 24px
+        display: flex
+        flex-direction: column
+        min-height: 400px  
+        &__img
+            position: absolute
+            bottom: 0
+            right: 0
+            height: 100%
+            width: auto
+            max-width: 50%
         &__title
-            @include titleBlock
-            
+            font-weight: bold 
+            color: $colorGray
+            font-size: 38px
+            &-inner
+                display: flex
+                flex-direction: column
+                flex-grow: 1
+        &__subtitle
+            flex-grow: 1
+            display: flex
+            flex-direction: column
+            justify-content: flex-end
+    &__remark
+        margin-top: 25px
+        font-weight: bold
+        
+// блок "частые вопросы"
+.faq
+    display: grid
+    min-height: 1000px
+    padding: 100px 200px
+    grid-template-columns: 1fr 1fr
+    gap: 50px
+    font-size: 24px
+    &__title
+        @include titleBlock
+        &-image
+            flex-grow: 1
+            position: relative
+        &-img
+            display: block
+            position: absolute
+            width: 100%
+            height: auto
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%)
+            max-width: 512px
+            background-color: $colorMain
+            border-radius: 50%
+    &__inner
+        display: flex
+        position: relative
+        overflow: hidden
+    &__item
+        background-color: $colorMain
+        border-radius: 25px
+        color: $colorLight
+        width: 100%
+        padding: 25px
+        display: flex
+        flex-direction: column
+        transition: all 1s linear
+        visibility: hidden
+        opacity: 0
+        position: absolute
+        top: 0
+        right: -100%
+        z-index: -10
+        &-left
+            position: absolute
+            top: 50%
+            left: 0
+            transform: translateY(-50%)
+            height: 50px
+            width: 50px
+            text-align: center
+            line-height: 50px
+            font-weight: bold
+            color: $colorLight
+            cursor: pointer
+            z-index: 17
+        &-right 
+            position: absolute
+            top: 50%
+            right: 0
+            transform: translateY(-50%)
+            height: 50px
+            width: 50px
+            text-align: center
+            line-height: 50px
+            font-weight: bold
+            color: $colorLight
+            cursor: pointer
+            z-index: 17
+        &-title
+            font-weight: bold
+            font-size: 28px
+            color: $colorGray
+        &-text
+            flex-grow: 1
+            display: flex
+            flex-direction: column
+            justify-content: flex-end
+        &--active
+            display: flex
+            visibility: visible
+            position: static
+            left: 0
+            top: 0
+            transition: all 1s linear
+            opacity: 1
+            z-index: 16
 // боковой слайд
 .side-nav__placeholder
     z-index: 20
@@ -502,12 +690,12 @@ $colorDark:  #436A59
     top: 0
     left: 0
     background-color: rgba(0, 0, 0, 0.4)
-    transition: all .4s linear
+    transition: all .4s ease-out
     opacity: 1
     visibility: visible
     &--hidden
         opacity: 0
-        transition: all .4s linear
+        transition: all .4s ease-out
         visibility: hidden
 .side-nav
     max-width: 100%
@@ -520,12 +708,12 @@ $colorDark:  #436A59
     background-color: $colorGray
     color: $colorDark
     font-size: 24px
-    transition: all .4s linear
+    transition: all .4s ease-out
     visibility: visible
     transform: translateX(0px)
     //box-shadow: -10px 0px 10px 10px $colorGray
     &--hidden
-        transition: all .4s linear
+        transition: all .4s ease-out
         visibility: hidden
         transform: translateX(100%)
     &__close
