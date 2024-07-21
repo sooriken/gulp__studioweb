@@ -199,7 +199,7 @@ mixin content
                     .home-item__title-inner
                         .home-item__title Дисциплина.
                         .home-item__subtitle Желание работать и четко выстроенный график. 
-            .home__remark *Это те вещи, которые понадобятся тебе для старта. НО если у тебя нет оборудования - наша студия может его предоставить.
+            .home__remark *Это те вещи, которые понадобятся тебе для старта. НО если у тебя нет оборудования - наша студия может его предоставить.                
         // блок "частые вопросы"
         .faq(id="blockFaq")
             .faq__title
@@ -224,6 +224,18 @@ mixin content
                     .faq__item-title 5
                     .faq__item-text 5
                 .faq__item-right(id="sliderRight") >
+                    // блок "обратная связь"
+        .feedback
+            .feedback__inner
+                form.feedback__form(action="https://api.web3forms.com/submit" method="POST")
+                    input(type="hidden" name="access_key" value="c8b25867-60a2-4a15-a196-598f960cc46d")
+                    label.feedback__label Ваше имя:
+                        input.feedback__input(type="text" name="name")
+                    label.feedback__label Номер телефона:
+                        input.feedback__input(type="phone" name="phone")
+                    label.feedback__label Телеграм:
+                        input.feedback__input(type="text" name="telegram" value="@")
+                    button.feedback__button(type="submit") Отправить
         // боковая навигация
         .side-nav__placeholder.side-nav__placeholder--hidden(id="sidenavPlaceholder")
         .side-nav.side-nav--hidden(id="sidenav")
