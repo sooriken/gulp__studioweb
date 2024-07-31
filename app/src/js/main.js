@@ -79,14 +79,14 @@ document.getElementById("sliderLeft").addEventListener('click',function (){
     console.log('rr');
     sliderId = sliderId - 1;
     if (sliderId < 0) {
-        sliderId = 4; 
+        sliderId = 3; 
     } 
     slide(); 
 });
 // функция для слайдера
 document.getElementById("sliderRight").addEventListener('click',function (){
     sliderId = sliderId + 1;
-    if (sliderId > 4) { 
+    if (sliderId > 3) { 
         sliderId = 0;
     }
     slide(); 
@@ -95,7 +95,7 @@ document.getElementById("sliderRight").addEventListener('click',function (){
 
 function slide() {
     var i = 0;
-    while (i < 5) {
+    while (i < 4) {
         document.getElementById("slider").querySelectorAll('.faq__item')[i].classList.remove('faq__item--active');
         console.log(document.getElementById("slider").querySelectorAll('.faq__item')[i]);
         i++;

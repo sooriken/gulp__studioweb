@@ -14,7 +14,7 @@ mixin content
                     img.welcome__logo-img(src="../images-min/title/title-image__logo.png")
                 .welcome__logo-geo Санкт-Петербург <br> м. Сенная площадь
             .welcome__inner
-                .welcome__title Работай <br> вебкам моделью
+                .welcome__title Работай моделью
                 a.button.button--work(href="#")
                     span Работать
                     .button-image + 
@@ -50,6 +50,35 @@ mixin content
                     .support-list__item постановка ракурса
                     .support-list__item.support-list__item--main настройка оборудования
                     .support-list__item создание шоу
+        // блок "про безопасность"
+        .safety(id="blockSafety")
+            .safety__inner
+                .safety__ask-inner
+                    .safety__ask-image
+                        img.safety__ask-img(src="../images-min/title/title-image__safety.png")
+                    .safety__ask Почему ты можешь не переживать что тебя узнают на улице?
+                .safety-item__inner
+                    .safety-item
+                        .safety-item__image
+                            img.safety-item__img(src="../images-min/safety/safety-image__1.png")
+                        .safety-item__title Дистанция
+                        .safety-item__text Контакт с пользователями происходит только через чат. Никакого живого контакта. Никто не будет знать твоё настоящее имя и место нахождения.
+                    .safety-item
+                        .safety-item__image
+                            img.safety-item__img(src="../images-min/safety/safety-image__2.png")
+                        .safety-item__title Приватность
+                        .safety-item__text Вся личная информация защищена нашим сервисом. Доступ к информации связанной с тобой будет иметь только твой личный менеджер
+                    .safety-item
+                        .safety-item__image
+                            img.safety-item__img(src="../images-min/safety/safety-image__3.png")
+                        .safety-item__title Выбор
+                        .safety-item__text Ты сама решаешь с кем ты хочешь вести диалог.
+                        .safety-item__text Ты всегда можешь сказать нет или заблокировать пользователя.
+                    .safety-item
+                        .safety-item__image
+                            img.safety-item__img(src="../images-min/safety/safety-image__4.png")
+                        .safety-item__title Локация
+                        .safety-item__text Ты выбираешь как и на какие страны и регионы вести трансляцию, а твой личный менеджер подскажет как делать это максимально эффективно.
         // блок "флиртуй"
         .flirt(id="blockFlirt")
             .flirt__inner
@@ -62,6 +91,54 @@ mixin content
                 a.button.button--flirt(href="#")
                     span Хочу попробовать 
                     .button-image + 
+        // блок "на дому"
+        .home(id="blockHome")
+            .home__title 
+                .home__title-image
+                    img.home__title-img(src="../images-min/title/title-image__home.png")
+            .home__inner.home__inner--first
+                .home__subtitle Что нужно для работы из дома?
+                .home-item
+                    .home-item__icon
+                    .home-item__title-inner
+                        .home-item__title Интернет.
+                        .home-item__subtitle Понадобится хорошая скорость интернета для качественных трансляций.
+                    .home-item__image
+                        img.home-item__img(src="../images-min/home/home-image__1.png")
+            .home__inner
+                .home-item
+                    .home-item__icon
+                    .home-item__title-inner
+                        .home-item__title Оборудование.
+                        .home-item__subtitle Вебкамера, свет и компьютер.
+                .home-item
+                    .home-item__icon
+                    .home-item__title-inner
+                        .home-item__title Дисциплина.
+                        .home-item__subtitle Желание работать и четко выстроенный график. 
+            .home__remark *Это те вещи, которые понадобятся тебе для старта. НО если у тебя нет оборудования - наша студия может его предоставить.  
+        // блок "работай с нами"
+        .collab(id="blockCollab")
+            .collab__inner
+                .collab-item 
+                    .collab-item__title Тех. Поддержку
+                    .collab-item__text Мы поможем во всех вопросах что касаются техники и настройки трансляции.
+                .collab-item
+                    .collab-item__title Свободу выбора
+                    .collab-item__text Выбирай удобные для тебя время и график работы.
+                .collab-item
+                    .collab-item__title Лучшие площадки
+                    .collab-item__text Мы работаем с самыми популярными площадками, где всегда есть платежеспособные пользователи.
+                .collab-item
+                    .collab-item__title Стабильные выплаты
+                    .collab-item__text Выплаты без задержек раз в 2 недели. А также возможность брать авансы.
+                .collab-item
+                    .collab-item__title Обучение
+                    .collab-item__text Наша команда обучит всем тонкостям и аспектам этой работы.
+            .collab__title 
+                .collab__title-text Работая с нами ты получишь
+                .collab__title-image
+                    img.collab__title-img(src="../images-min/collab/collab-image__1.png")
         // блок "про деньги"
         .money(id="blockMoney")
             .money__title 
@@ -97,57 +174,6 @@ mixin content
                         .money-form__inner
                             .money-form__label Доход в месяц:
                             .money-form__result(id="dropdownResultDisplay") 800$   
-        // блок "про безопасность"
-        .safety(id="blockSafety")
-            .safety__title
-                .safety__title-image
-                    img.safety__title-img(src="../images-min/title/title-image__safety.png")
-            .safety__inner
-                .safety__ask Почему ты можешь не переживать что тебя узнают на улице?
-                .safety-item__inner
-                    .safety-item
-                        .safety-item__image
-                            img.safety-item__img(src="../images-min/safety/safety-image__1.png")
-                        .safety-item__title Дистанция
-                        .safety-item__text Контакт с пользователями происходит только через чат. Никакого живого контакта. Никто не будет знать твоё настоящее имя и место нахождения.
-                    .safety-item
-                        .safety-item__image
-                            img.safety-item__img(src="../images-min/safety/safety-image__2.png")
-                        .safety-item__title Приватность
-                        .safety-item__text Вся личная информация защищена нашим сервисом. Доступ к информации связанной с тобой будет иметь только твой личный менеджер
-                    .safety-item
-                        .safety-item__image
-                            img.safety-item__img(src="../images-min/safety/safety-image__3.png")
-                        .safety-item__title Выбор
-                        .safety-item__text Ты сама решаешь с кем ты хочешь вести диалог.
-                        .safety-item__text Ты всегда можешь сказать нет или заблокировать пользователя.
-                    .safety-item
-                        .safety-item__image
-                            img.safety-item__img(src="../images-min/safety/safety-image__4.png")
-                        .safety-item__title Локация
-                        .safety-item__text Ты выбираешь как и на какие страны и регионы вести трансляцию, а твой личный менеджер подскажет как делать это максимально эффективно.
-        // блок "работай с нами"
-        .collab(id="blockCollab")
-            .collab__inner
-                .collab-item 
-                    .collab-item__title Тех. Поддержку
-                    .collab-item__text Мы поможем во всех вопросах что касаются техники и настройки трансляции.
-                .collab-item
-                    .collab-item__title Свободу выбора
-                    .collab-item__text Выбирай удобные для тебя время и график работы.
-                .collab-item
-                    .collab-item__title Лучшие площадки
-                    .collab-item__text Мы работаем с самыми популярными площадками, где всегда есть платежеспособные пользователи.
-                .collab-item
-                    .collab-item__title Стабильные выплаты
-                    .collab-item__text Выплаты без задержек раз в 2 недели. А также возможность брать авансы.
-                .collab-item
-                    .collab-item__title Обучение
-                    .collab-item__text Наша команда обучит всем тонкостям и аспектам этой работы.
-            .collab__title 
-                .collab__title-text Работая с нами ты получишь
-                .collab__title-image
-                    img.collab__title-img(src="../images-min/collab/collab-image__1.png")
         // блок "отзывы"
         .review(id="blockReview")
             .review__title 
@@ -173,57 +199,33 @@ mixin content
                                 img.review-item__header-img(src="../images-min/review/review-image__3.png")
                             .review-item__header-name Тесса
                         .review-item__text Меня зовут Тесса, мне 20. Работаю на студии год. Я безумно рада, что приобрела здесь больше, чем просто работу. На многое повлиял коллектив, который всегда поддержит, выручит и всегда пойдет на встречу, что очень помогает моему карьерному росту и внутреннему спокойствию. Сюда хочется приезжать, потому что ты видишь результат и отдачу от руководства, их поддержку.
-                .review-item__title Отзывы наших моделей
-        // блок "на дому"
-        .home(id="blockHome")
-            .home__title 
-                .home__title-image
-                    img.home__title-img(src="../images-min/title/title-image__home.png")
-            .home__inner.home__inner--first
-                .home__subtitle Что нужно для работы из дома?
-                .home-item
-                    .home-item__icon
-                    .home-item__title-inner
-                        .home-item__title Интернет.
-                        .home-item__subtitle Понадобится хорошая скорость интернета для качественных трансляций.
-                    .home-item__image
-                        img.home-item__img(src="../images-min/home/home-image__1.png")
-            .home__inner
-                .home-item
-                    .home-item__icon
-                    .home-item__title-inner
-                        .home-item__title Оборудование.
-                        .home-item__subtitle Вебкамера, свет и компьютер.
-                .home-item
-                    .home-item__icon
-                    .home-item__title-inner
-                        .home-item__title Дисциплина.
-                        .home-item__subtitle Желание работать и четко выстроенный график. 
-            .home__remark *Это те вещи, которые понадобятся тебе для старта. НО если у тебя нет оборудования - наша студия может его предоставить.                
+                .review-item__title Отзывы наших моделей              
         // блок "частые вопросы"
         .faq(id="blockFaq")
             .faq__title
-                .faq__title-text Зарабатывать от 1000$ в месяц реально
+                .faq__title-text МЫ ГАРАНТИРУЕМ:
                 .faq__title-image
                     img.faq__title-img(src="../images-min/faq/faq-image__1.png")
             .faq__inner(id="slider")
                 .faq__item-left(id="sliderLeft") <
                 .faq__item.faq__item--active
-                    .faq__item-title 1
-                    .faq__item-text 1
+                    .faq__item-title Техническая поддержка
+                    .faq__item-text Мы 24/7 рядом и всегда готовы помочь. Работая в офисе или из дома, ты всегда получишь техническую помощь с любым возникшем вопросом. 
                 .faq__item
-                    .faq__item-title 2
-                    .faq__item-text 2
+                    .faq__item-title Обучение
+                    .faq__item-text С нами не страшно начинать. Мы полностью подготовим тебя для выхода в трансляцию. Уверенный и хороший старт – залог успешного будущего в этой сфере. На протяжении всего твоего пути, наша команда будет курировать тебя и помогать. 
                 .faq__item
-                    .faq__item-title 3
-                    .faq__item-text 3
+                    .faq__item-title Подготовка к работе
+                    .faq__item-text Вместе подбираем подходящие тебе площадки, помогаем с идеей шоу и ее реализацией.
+                    .faq__item-text Настраиваем все необходимое для работы оборудование.
+                    .faq__item-text Регистрируем аккаунты на выбранных тобой площадках, занимаемся их заполнением и оформлением.
+                    .faq__item-text Обучаем всему необходимому, чтобы можно было спокойно и уверено выйти в онлайн.
                 .faq__item
-                    .faq__item-title 4
-                    .faq__item-text 4
-                .faq__item
-                    .faq__item-title 5
-                    .faq__item-text 5
-                .faq__item-right(id="sliderRight") >
+                    .faq__item-title Выплаты
+                    .faq__item-text Мы работаем с зарубежными площадками, в связи с чем большие трудности могут появиться при выводе средств. Поэтому все эти трудности будут на наших плечах. Мы возьмем все эти проблемы на себя.
+                    .faq__item-text Работая с разными банками и платежными системами, мы обеспечим бесперебойный вывод средств.
+                    .faq__item-text Выплаты без задержек два раза месяц. Возможность брать авансы.
+                .faq__item-right(id="sliderRight") > 
                     // блок "обратная связь"
         .feedback
             .feedback__inner

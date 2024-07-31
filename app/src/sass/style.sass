@@ -7,11 +7,17 @@
 //$colorMain:  #01687B
 //$colorDark:  #023F4A
 
+// Лучшая версия
+//$colorLight: #F2F7FB
+//$colorGray:  #D1CBC6
+//$colorMain:  #497E76  
+//$colorDark:  #436A59
+
 $colorLight: #F2F7FB
-$colorGray:  #D1CBC6
-$colorMain:  #497E76  
-$colorDark:  #436A59
- 
+$colorGray:  #f9c9dd
+$colorMain:  #DF7DA6  
+$colorDark:  #C14E76     
+
 @mixin titleBlock
     font-size: 45px
     text-align: center
@@ -38,8 +44,6 @@ $colorDark:  #436A59
     transform: translateX(-50%)
     background: linear-gradient(90deg,$colorLight, $colorMain, $colorLight)
     
-
-
 // burger button
 .burger-button
     position: fixed
@@ -138,10 +142,10 @@ $colorDark:  #436A59
         z-index: 10
         margin: auto 0
     &__logo
-        margin-top: 100px
         font-size: 40px
         color: $colorDark
         z-index: 10
+        margin-top: 100px
         &-image
             width: 10% 
             margin: 0 auto
@@ -172,11 +176,16 @@ $colorDark:  #436A59
         &-img
             display: block
             position: absolute
-            width: 100%
+            width: 80%
             height: auto
             left: 50%
-            top: 50%
+            top: 0
             transform: translate(-50%, -50%)
+        &-text
+            flex-grow: 1
+            display: flex
+            flex-direction: column
+            justify-content: center
     &__inner
         display: grid
         grid-template-columns: 1fr 1fr
@@ -295,11 +304,13 @@ $colorDark:  #436A59
     &__title
         text-align: center
         &-image
-            max-width: 50%
+            max-width: 35%
             margin: 0 auto
         &-img
             width: 100%
             height: auto
+            display: block
+            margin: 0 auto
         &-text
             @include title
             &::after
@@ -393,12 +404,13 @@ $colorDark:  #436A59
     min-height: 600px
     &__title
         &-image
-            max-width: 50%
+            max-width: 40%
             margin: 0 auto
         &-img
             width: 100%
             height: auto
-        text-align: center
+            display: block
+            margin: 0 auto
         &-text
             @include title
             &::after
@@ -411,6 +423,21 @@ $colorDark:  #436A59
         margin-top: 50px
     &__ask
         @include titleBlock
+        flex-grow: 1
+        &-inner
+            display: flex
+            flex-direction: column
+            justify-content: center
+        &-image
+            width: 50%
+            margin: 0 auto
+            flex-grow: 1
+            display: flex
+            flex-direction: column
+            justify-content: center
+        &-img
+            width: 100%
+            height: auto
     &-item
         background-color: $colorMain
         border-radius: 25px
@@ -473,14 +500,19 @@ $colorDark:  #436A59
         &-img
             display: block
             position: absolute
-            width: 100%
+            width: 50%
             height: auto
             left: 50%
-            top: 50%
+            top: 0
             transform: translate(-50%, -50%)
             background-color: $colorMain
             border-radius: 50%
             max-width: 512px
+        &-text
+            flex-grow: 1
+            flex-direction: column
+            display: flex
+            justify-content: center
             
 // блок "отзывы"
 .review
@@ -488,11 +520,13 @@ $colorDark:  #436A59
     &__title
         text-align: center
         &-image
-            max-width: 50%
+            max-width: 35%
             margin: 0 auto
         &-img
             width: 100%
             height: auto
+            display: block
+            margin: 0 auto
         &-text
             @include title
             &::after
@@ -540,11 +574,13 @@ $colorDark:  #436A59
     &__title
         text-align: center
         &-image
-            max-width: 50%
+            max-width: 30%
             margin: 0 auto
         &-img
             width: 100%
             height: auto
+            display: block
+            margin: 0 auto
         &-text
             @include title
             &::after
@@ -572,11 +608,12 @@ $colorDark:  #436A59
         min-height: 400px  
         &__img
             position: absolute
-            bottom: 0
+            bottom: 50%
             right: 0
-            height: 100%
+            height: 80%
             width: auto
             max-width: 50%
+            transform: translateY(50%)
         &__title
             font-weight: bold 
             color: $colorGray
@@ -597,7 +634,7 @@ $colorDark:  #436A59
 // блок "частые вопросы"
 .faq
     display: grid
-    min-height: 1000px
+    min-height: 700px
     padding: 100px 200px
     grid-template-columns: 1fr 1fr
     gap: 50px
@@ -610,7 +647,7 @@ $colorDark:  #436A59
         &-img
             display: block
             position: absolute
-            width: 100%
+            width: 50%
             height: auto
             left: 50%
             top: 50%
@@ -651,6 +688,7 @@ $colorDark:  #436A59
             cursor: pointer
             z-index: 17
             background-color: $colorDark
+            opacity: 50%
             border-radius: 5px
         &-right 
             position: absolute
@@ -666,6 +704,7 @@ $colorDark:  #436A59
             cursor: pointer
             z-index: 17
             background-color: $colorDark
+            opacity: 50%
             border-radius: 5px
         &-title
             font-weight: bold
@@ -676,6 +715,7 @@ $colorDark:  #436A59
             display: flex
             flex-direction: column
             justify-content: flex-end
+            margin-top: 20px
         &--active
             display: flex
             visibility: visible
