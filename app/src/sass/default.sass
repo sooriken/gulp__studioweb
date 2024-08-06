@@ -51,10 +51,17 @@ img
     line-height: 1
 
 .button:hover 
-    color: #DF7DA6
-    border-color: #DF7DA6
-    background: #FFE4E1
-
+    color: #C14E76
+    border-color: #C14E76
+    background: #F2F7FB
+    
+.button-image
+    transition: .3s linear
+        
+.button:hover > .button-image
+    background-color: #DF7DA6
+    color: #F2F7FB
+    border-color:  #F2F7FB
 .form 
     display: block
 
@@ -63,11 +70,13 @@ img
     box-sizing: border-box
     width: 100%
     //
-    padding: 12px 10px
+    padding: 12px
     border: 1px solid #FFFFFF
     border-radius: 3px
     font-size: 1.5rem
     color: #272733
+    color: #C14E76 
+    color: #000000 
     background: rgba(255, 255, 255, 0.85)
 
 .textform:active,

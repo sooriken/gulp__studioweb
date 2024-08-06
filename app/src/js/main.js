@@ -5,6 +5,40 @@ var dropdownResult = (dropdownResultLevel * dropdownResultValue)*4 + "$";
 // переменные для слайдера
 var sliderId = 0;
 
+// переменные для слайдера "gain"
+var gainItems = document.getElementById("gainSlider").querySelectorAll('.gain-item');
+var gainAll = gainItems.length;
+var gainId = 0;
+console.log(gainAll);
+
+// функция для слайдера gain влево
+document.getElementById("gainLeft").addEventListener('click',function (){
+    gainId = gainId - 1;
+    if (gainId < 0) {
+        gainId = gainAll - 1; 
+    } 
+    sliderGain(); 
+});
+// функция для слайдера gain вправо
+document.getElementById("gainRight").addEventListener('click',function (){
+    gainId = gainId + 1;
+    if (gainId == gainAll) {
+        gainId = 0; 
+    } 
+    sliderGain(); 
+});
+
+// функция слайдера gain
+function sliderGain() {
+    var i = 0;
+    while (i < gainAll) {
+        gainItems[i].classList.remove('gain-item--active');
+        i++;
+    }
+    gainItems[gainId].classList.add('gain-item--active');
+}
+
+
 function dropdownValue(dropdownNumber) {
     document.getElementById("dropdownValueDisplay").innerHTML = dropdownNumber;
     dropdownResultValue = dropdownNumber;
@@ -76,7 +110,6 @@ document.getElementById("sidenavClose").addEventListener('click',function (){
 
 // функция для слайдера
 document.getElementById("sliderLeft").addEventListener('click',function (){
-    console.log('rr');
     sliderId = sliderId - 1;
     if (sliderId < 0) {
         sliderId = 3; 

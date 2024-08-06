@@ -15,7 +15,7 @@ mixin content
                 .welcome__logo-geo Санкт-Петербург <br> м. Сенная площадь
             .welcome__inner
                 .welcome__title Работай моделью
-                a.button.button--work(href="#")
+                a.button.button--work(href="#blockFeedback")
                     span Работать
                     .button-image + 
         // блок "заработок"
@@ -26,14 +26,14 @@ mixin content
                     img.earn__title-img(src="../images-min/earn/earn-image__1.png")
             .earn__inner
                 .earn__item 
-                    .earn__item-title Пройди обучение.
+                    .earn__item-title Обучайся.
                     .earn__item-text Наши администраторы помогут на твоем пути, предоставляя весь объем информации необходимой для работы, даже если ты начинаешь с нуля.
                 .earn__item.earn__item--blue 
-                    .earn__item-title Дисциплина. 
-                    .earn__item-text Работай и зарабатывай. Правильно выстроенный график и целеустремленность - это путь к успеху.
-                .earn__item.earn__item--blue
                     .earn__item-title Будь собой.  
                     .earn__item-text Каждый из нас уникален.     нас есть то, чего нет у других. Находи свои сильные стороны и используй их в работе. Мы создаем личный бренд, а не работаем по шаблону.
+                .earn__item.earn__item--blue
+                    .earn__item-title Дисциплина.
+                    .earn__item-text  Работай и зарабатывай. Правильно выстроенный график и целеустремленность - это путь к успеху.
                 .earn__item 
                     .earn__item-title Интересуйся.
                     .earn__item-text Неподдельный интерес - тоже способ развития. Спрашивай, изучай, узнавай.
@@ -53,10 +53,10 @@ mixin content
         // блок "про безопасность"
         .safety(id="blockSafety")
             .safety__inner
-                .safety__ask-inner
-                    .safety__ask-image
-                        img.safety__ask-img(src="../images-min/title/title-image__safety.png")
-                    .safety__ask Почему ты можешь не переживать что тебя узнают на улице?
+                .ask__inner
+                    .ask__image
+                        img.ask__img(src="../images-min/title/title-image__safety.png")
+                    .ask__text Почему ты можешь не переживать что тебя узнают на улице?
                 .safety-item__inner
                     .safety-item
                         .safety-item__image
@@ -88,9 +88,22 @@ mixin content
                     img.flirt__emoji-img(src="../images-min/flirt/flirt-image__2.png")
                 .flirt__title Флиртуй. Общайся. Удивляй.
                 .flirt__subtitle Общайся со зрителями и интересуйся их предпочтениями, создавай приятную романтическую атмосферу. Личный менеджер поможет с созданием твоего уникального шоу.
-                a.button.button--flirt(href="#")
+                a.button.button--flirt(href="#blockFeedback")
                     span Хочу попробовать 
                     .button-image + 
+        // блок "тачки"
+        .gain(id="blockGain")
+            .gain__title Меняй свою жизнь
+            .gain__inner
+                .gain__left(id="gainLeft") <
+                .gain-item__inner(id="gainSlider")
+                    .gain-item.gain-item--active
+                        img.gain-item__image(src="https://loremflickr.com/g/1920/1080/paris")
+                    .gain-item
+                        img.gain-item__image(src="https://loremflickr.com/g/1920/1080/jewerly")
+                    .gain-item
+                        img.gain-item__image(src="https://loremflickr.com/g/1920/1080/car")
+                .gain__right(id="gainRight") >
         // блок "на дому"
         .home(id="blockHome")
             .home__title 
@@ -141,12 +154,11 @@ mixin content
                     img.collab__title-img(src="../images-min/collab/collab-image__1.png")
         // блок "про деньги"
         .money(id="blockMoney")
-            .money__title 
-                //.money__title-text Про деньги
-                .money__title-image
-                    img.money__title-img(src="../images-min/title/title-image__money.png")
             .money__inner
-                .money__ask Сколько я могу зарабатывать?
+                .ask__inner
+                    .ask__image
+                        img.ask__img(src="../images-min/title/title-image__money.png")
+                    .ask__text Сколько я могу зарабатывать?
                 .money-form
                     .money-form__title Воспользуйтесь калькулятором для расчета возможного дохода!
                     .money__forms
@@ -176,9 +188,6 @@ mixin content
                             .money-form__result(id="dropdownResultDisplay") 800$   
         // блок "отзывы"
         .review(id="blockReview")
-            .review__title 
-                .review__title-image
-                    img.review__title-img(src="../images-min/title/title-image__review.png")
             .review__inner  
                 .review-item__inner
                     .review-item 
@@ -187,6 +196,10 @@ mixin content
                                 img.review-item__header-img(src="../images-min/review/review-image__1.png")
                             .review-item__header-name Майк
                         .review-item__text Меня зовут Майк, мне 26. В этой индустрии я уже полтора года. До неё было несколько работ в том числе и гос.служба. Попал сюда осознанно и по своему желанию.. привела подруга по моей просьбе. Я изначально замечал за собой любовь к камере, расположенность к ведению в страничек в соц сетей и открытость в сексуальном плане. Вэбкам оказался находкой в этом плане. Еще одна причина прийти сюда- долги и нужда в быстрых деньгах. Все проблемы решились в течении года и стали появляться материальные блага и возможность дарить подарки себе и близким людям. Что касаемо студийного коллектива и руководства, хорошие, мотивирующие, душевные люди стремящиеся развиться и развивать других. Помогут советом, настройкой оборудования и просто добрым словом. Сама индустрия это отличная возможность получить дальнейшее финансирование для вашего бизнеса или же продолжить развиваться здесь.
+                    .ask__inner
+                        .ask__image
+                            img.ask__img(src="../images-min/title/title-image__review.png")
+                        .ask__text Отзывы наших моделей
                     .review-item
                         .review-item__header
                             .review-item__header-logo
@@ -198,16 +211,15 @@ mixin content
                             .review-item__header-logo 
                                 img.review-item__header-img(src="../images-min/review/review-image__3.png")
                             .review-item__header-name Тесса
-                        .review-item__text Меня зовут Тесса, мне 20. Работаю на студии год. Я безумно рада, что приобрела здесь больше, чем просто работу. На многое повлиял коллектив, который всегда поддержит, выручит и всегда пойдет на встречу, что очень помогает моему карьерному росту и внутреннему спокойствию. Сюда хочется приезжать, потому что ты видишь результат и отдачу от руководства, их поддержку.
-                .review-item__title Отзывы наших моделей              
+                        .review-item__text Меня зовут Тесса, мне 20. Работаю на студии год. Я безумно рада, что приобрела здесь больше, чем просто работу. На многое повлиял коллектив, который всегда поддержит, выручит и всегда пойдет на встречу, что очень помогает моему карьерному росту и внутреннему спокойствию. Сюда хочется приезжать, потому что ты видишь результат и отдачу от руководства, их поддержку.              
         // блок "частые вопросы"
         .faq(id="blockFaq")
             .faq__title
-                .faq__title-text МЫ ГАРАНТИРУЕМ:
+                img.faq__title-text(src="../images-min/faq/faq-title.png")
                 .faq__title-image
                     img.faq__title-img(src="../images-min/faq/faq-image__1.png")
+            .faq__item-left(id="sliderLeft") <
             .faq__inner(id="slider")
-                .faq__item-left(id="sliderLeft") <
                 .faq__item.faq__item--active
                     .faq__item-title Техническая поддержка
                     .faq__item-text Мы 24/7 рядом и всегда готовы помочь. Работая в офисе или из дома, ты всегда получишь техническую помощь с любым возникшем вопросом. 
@@ -225,19 +237,30 @@ mixin content
                     .faq__item-text Мы работаем с зарубежными площадками, в связи с чем большие трудности могут появиться при выводе средств. Поэтому все эти трудности будут на наших плечах. Мы возьмем все эти проблемы на себя.
                     .faq__item-text Работая с разными банками и платежными системами, мы обеспечим бесперебойный вывод средств.
                     .faq__item-text Выплаты без задержек два раза месяц. Возможность брать авансы.
-                .faq__item-right(id="sliderRight") > 
-                    // блок "обратная связь"
-        .feedback
+            .faq__item-right(id="sliderRight") > 
+        // блок "видео"
+        .video
+            .video__item
+                video.video__item-source(controls="controls" autoplay)
+                    source(src="../src/video/test.mp4")
+            .ask__inner
+                    .ask__image
+                        img.ask__img(src="../images-min/title/title-image__money.png")
+                    .ask__text Наши видео
+        // блок "обратная связь"
+        .feedback(id="blockFeedback")
             .feedback__inner
+                .feedback__title Стать моделью
+                .feedback__subtitle Начни зарабатывать вместе с нами!
                 form.feedback__form(action="https://api.web3forms.com/submit" method="POST")
                     input(type="hidden" name="access_key" value="c8b25867-60a2-4a15-a196-598f960cc46d")
                     label.feedback__label Ваше имя:
-                        input.feedback__input(type="text" name="name")
+                        input.textform.feedback__input(type="text" name="name")
                     label.feedback__label Номер телефона:
-                        input.feedback__input(type="phone" name="phone")
+                        input.textform.feedback__input(type="phone" name="phone")
                     label.feedback__label Телеграм:
-                        input.feedback__input(type="text" name="telegram" value="@")
-                    button.feedback__button(type="submit") Отправить
+                        input.textform.feedback__input(type="text" name="telegram")
+                    button.button.button--feedback(type="submit") Отправить
         // боковая навигация
         .side-nav__placeholder.side-nav__placeholder--hidden(id="sidenavPlaceholder")
         .side-nav.side-nav--hidden(id="sidenav")
@@ -246,12 +269,14 @@ mixin content
             .side-nav__inner
                 // "--active" модификатор
                 a.side-nav__button(href="#blockEarn") Заработок 
-                a.side-nav__button(href="#blockFlirt") Создай своё шоу
-                a.side-nav__button(href="#blockMoney") Калькулятор дохода
                 a.side-nav__button(href="#blockSafety") Про безопасность
-                a.side-nav__button(href="#blockCollab") Работай с нами
-                a.side-nav__button(href="#blockReview") Отзывы
+                a.side-nav__button(href="#blockFlirt") Создай своё шоу
+                a.side-nav__button(href="#blockGain") Меняй свою жизнь
                 a.side-nav__button(href="#blockHome") Работа на дому
+                a.side-nav__button(href="#blockCollab") Работай с нами
+                a.side-nav__button(href="#blockMoney") Калькулятор дохода
+                a.side-nav__button(href="#blockReview") Отзывы
                 a.side-nav__button(href="#blockFaq") Частые вопросы
+                a.side-nav__button(href="#blockFeedback") Стать моделью
         
         

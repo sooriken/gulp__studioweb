@@ -16,7 +16,7 @@
 $colorLight: #F2F7FB
 $colorGray:  #f9c9dd
 $colorMain:  #DF7DA6  
-$colorDark:  #C14E76     
+$colorDark:  #C75F83        
 
 @mixin titleBlock
     font-size: 45px
@@ -44,6 +44,21 @@ $colorDark:  #C14E76
     transform: translateX(-50%)
     background: linear-gradient(90deg,$colorLight, $colorMain, $colorLight)
     
+.ask
+    &__inner
+        display: flex
+        flex-direction: column
+        justify-content: center
+    &__image
+        margin-bottom: 50px
+    &__img
+        max-width: 80%
+        margin: 0 auto
+    &__text
+        margin-top: 50px
+        font-size: 45px
+        text-align: center
+        font-weight: bold
 // burger button
 .burger-button
     position: fixed
@@ -80,6 +95,31 @@ $colorDark:  #C14E76
         max-width: 250px
         background-color: $colorLight
         color: $colorDark
+        &:hover
+            border-color: $colorLight
+            background-color: $colorMain
+            color: $colorLight
+            & > .button-image
+                border-color: $colorLight
+                background-color: $colorLight
+                color: $colorMain
+        & > .button-image
+            background-color: $colorMain
+            color: $colorLight
+    &--feedback
+        max-width: 100%
+        width: 100%
+        text-align: center
+        margin-top: 25px
+        background-color: $colorLight
+        color: $colorDark
+        flex-direction: row
+        border-color: $colorMain
+        border-radius: 10px
+        &:hover
+            background-color: $colorMain
+            color: $colorLight
+            border-color: $colorLight
     &-image
         position: absolute
         top: 50%
@@ -189,7 +229,7 @@ $colorDark:  #C14E76
     &__inner
         display: grid
         grid-template-columns: 1fr 1fr
-        grid-template-rows: 1fr 1fr
+        grid-template-rows: auto auto
         gap: 50px
     &__item
         color: $colorDark
@@ -296,6 +336,60 @@ $colorDark:  #C14E76
         max-width: 50%
         margin: 50px auto 0
         text-align: center
+// блок "тачки"
+.gain
+    padding: 100px 200px
+    &__inner
+        display: flex
+        margin-top: 25px
+    &__title
+        font-size: 45px
+        text-align: center
+        font-weight: bold
+        margin: 0 auto
+    &-item
+        display: none
+        &__inner
+            position: relative
+            display: grid
+            grid-template-columns: 1fr
+            aspect-ratio: 16/9
+            flex-grow: 1
+        &__image
+            width: 100%
+            height: auto
+            position: absolute
+            top: 0
+            left: 0
+            border-radius: 25px
+        &--active
+            display: block
+    &__right
+        height: 50px
+        width: 50px
+        background-color: $colorMain
+        z-index: 17
+        border-radius: 5px
+        text-align: center
+        color: $colorLight
+        font-weight: bold
+        line-height: 50px
+        font-size: 24px
+        cursor: pointer
+        margin: auto 0 auto 50px
+    &__left
+        height: 50px
+        width: 50px
+        background-color: $colorMain
+        z-index: 17
+        border-radius: 5px
+        text-align: center
+        color: $colorLight
+        font-weight: bold
+        line-height: 50px
+        font-size: 24px
+        cursor: pointer
+        margin: auto 50px auto 0
 // блок "про деньги"
 .money
     padding: 100px 200px 
@@ -421,23 +515,6 @@ $colorDark:  #C14E76
         gap: 50px
         flex-grow: 1
         margin-top: 50px
-    &__ask
-        @include titleBlock
-        flex-grow: 1
-        &-inner
-            display: flex
-            flex-direction: column
-            justify-content: center
-        &-image
-            width: 50%
-            margin: 0 auto
-            flex-grow: 1
-            display: flex
-            flex-direction: column
-            justify-content: center
-        &-img
-            width: 100%
-            height: auto
     &-item
         background-color: $colorMain
         border-radius: 25px
@@ -446,7 +523,7 @@ $colorDark:  #C14E76
         &__inner
             display: grid
             grid-template-columns: 1fr 1fr
-            grid-template-rows: 1fr 1fr
+            grid-template-rows: auto auto
             gap: 20px
         &__image
             width: 80%
@@ -532,12 +609,8 @@ $colorDark:  #C14E76
             &::after
                 @include titleAfter
     &__inner
-        display: grid
-        grid-template-columns: 1fr 1fr
-        gap: 50px
         margin-top: 50px
     &-item
-        margin-top: 25px
         background-color: $colorMain
         padding: 25px
         border-radius: 25px
@@ -545,8 +618,10 @@ $colorDark:  #C14E76
         &:first-child
             margin-top: 0
         &__inner
-            display: flex
-            flex-direction: column
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-template-rows: 1fr auto
+            gap: 25px
         &__header
             display: flex
             &-logo
@@ -639,22 +714,26 @@ $colorDark:  #C14E76
     grid-template-columns: 1fr 1fr
     gap: 50px
     font-size: 24px
+    position: relative
     &__title
-        @include titleBlock
+        display: flex
+        flex-direction: column
+        justify-content: center
         &-image
-            flex-grow: 1
             position: relative
+        &-text
+            max-width: 60%
+            margin: 0 auto
+            margin-bottom: 25px
         &-img
             display: block
-            position: absolute
             width: 50%
             height: auto
-            left: 50%
-            top: 50%
-            transform: translate(-50%, -50%)
             max-width: 512px
             background-color: $colorMain
             border-radius: 50%
+            margin: 0 auto
+        
     &__inner
         display: flex
         position: relative
@@ -688,7 +767,6 @@ $colorDark:  #C14E76
             cursor: pointer
             z-index: 17
             background-color: $colorDark
-            opacity: 50%
             border-radius: 5px
         &-right 
             position: absolute
@@ -704,7 +782,6 @@ $colorDark:  #C14E76
             cursor: pointer
             z-index: 17
             background-color: $colorDark
-            opacity: 50%
             border-radius: 5px
         &-title
             font-weight: bold
@@ -725,13 +802,55 @@ $colorDark:  #C14E76
             transition: all 1s linear
             opacity: 1
             z-index: 16
+// блок "видео"
+.video
+    display: grid
+    grid-template-columns: 3fr 2fr
+    padding: 100px 200px
+    gap: 50px
+    &__item
+        //aspect-ratio: 16/9
+        background-color: $colorMain
+        position: relative
+        overflow: hidden
+        &-source
+            //position: absolute
+            width: 100%
+            height: auto
+            //left: 50%
+            //top: 50%
+            //transform: translate(-50%, -50%)
 // блок "отправка"
 .feedback
     padding: 100px 200px
     &__inner
         display: flex
         flex-direction: column
+        max-width: 50%
+        margin: 0 auto
+        background-color: $colorMain
+        border-radius: 25px
+        padding: 25px
+    &__title
+        text-align: center
+        font-weight: bold
+        font-size: 34px
+    &__subtitle
+        margin-top: 5px
+        text-align: center
+        color: $colorGray
     &__form
+        margin-top: 25px
+    &__label
+        margin-top: 25px
+        color: $colorGray
+        &:first-child
+            margin-top: 0
+    &__input
+        margin-top: 5px
+        width: 100%
+        padding: 12px
+        border-radius: 10px
     
 // боковой слайд
 .side-nav__placeholder
@@ -782,12 +901,12 @@ $colorDark:  #C14E76
     &__inner
         padding: 0px 20px 20px 20px
     &__button
-        margin-top: 40px
+        margin-top: 35px
         position: relative
         color: #000 
         font-weight: bold
         &:first-child
-            margin-top: 20px
+            margin-top: 15px
         &:hover
             color: #000 
         &::after
