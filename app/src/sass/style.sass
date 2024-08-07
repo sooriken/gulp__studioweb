@@ -14,7 +14,8 @@
 //$colorDark:  #436A59
 
 $colorLight: #F2F7FB
-$colorGray:  #f9c9dd
+//$colorGray:  #f9c9dd
+$colorGray:  #e9e9e9
 $colorMain:  #DF7DA6  
 $colorDark:  #C75F83        
 
@@ -187,7 +188,7 @@ $colorDark:  #C75F83
         z-index: 10
         margin-top: 100px
         &-image
-            width: 10% 
+            width: 20% 
             margin: 0 auto
         &-img
             width: 100%
@@ -221,6 +222,7 @@ $colorDark:  #C75F83
             left: 50%
             top: 0
             transform: translate(-50%, -50%)
+            max-width: 256px
         &-text
             flex-grow: 1
             display: flex
@@ -317,6 +319,7 @@ $colorDark:  #C75F83
         position: absolute
         background-color: $colorLight
         border-radius: 50%
+        max-width: 200px
         &-img
             width: 100%
             height: auto
@@ -584,7 +587,7 @@ $colorDark:  #C75F83
             transform: translate(-50%, -50%)
             background-color: $colorMain
             border-radius: 50%
-            max-width: 512px
+            max-width: 256px
         &-text
             flex-grow: 1
             flex-direction: column
