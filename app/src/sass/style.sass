@@ -17,7 +17,7 @@ $colorLight: #F2F7FB
 //$colorGray:  #f9c9dd
 $colorGray:  #e9e9e9
 $colorMain:  #DF7DA6  
-$colorDark:  #C75F83        
+$colorDark:  #cc6f8f        
 
 @mixin titleBlock
     font-size: 45px
@@ -222,7 +222,7 @@ $colorDark:  #C75F83
             left: 50%
             top: 0
             transform: translate(-50%, -50%)
-            max-width: 256px
+            max-width: 200px
         &-text
             flex-grow: 1
             display: flex
@@ -273,7 +273,7 @@ $colorDark:  #C75F83
             left: 0
             height: 100%
             width: 50px
-            background: linear-gradient(90deg, $colorLight 50%, transparent 100%)
+            background: linear-gradient(90deg, $colorGray 50%, transparent 100%)
             z-index: 17
         &::before
             display: block
@@ -282,7 +282,7 @@ $colorDark:  #C75F83
             right: 0
             height: 100%
             width: 50px
-            background: linear-gradient(270deg, $colorLight 50%, transparent 100%)
+            background: linear-gradient(270deg, $colorGray 50%, transparent 100%)
             z-index: 17
         &__inner
             display: flex
