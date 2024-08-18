@@ -1,7 +1,8 @@
 // переменные для дропдауна
 var dropdownResultLevel = 50;
 var dropdownResultValue = 4;
-var dropdownResult = (dropdownResultLevel * dropdownResultValue)*4 + "$";
+var dropdownResultLang = 1;
+var dropdownResult = Math.round((dropdownResultLevel * dropdownResultValue * dropdownResultLang)*4) + "$";
 // переменные для слайдера
 var sliderId = 0;
 
@@ -38,18 +39,28 @@ function sliderGain() {
     gainItems[gainId].classList.add('gain-item--active');
 }
 
-
 function dropdownValue(dropdownNumber) {
     document.getElementById("dropdownValueDisplay").innerHTML = dropdownNumber;
     dropdownResultValue = dropdownNumber;
-    dropdownResult = (dropdownResultLevel * dropdownResultValue)*4 + "$";
+    dropdownResult = Math.round((dropdownResultLevel * dropdownResultValue * dropdownResultLang)*4) + "$";
     document.getElementById("dropdownResultDisplay").innerHTML = dropdownResult;
 }
 
 function dropdownLevel(dropdownText, dropdownTextLevel) {
     document.getElementById("dropdownLevelDisplay").innerHTML = dropdownText;
     dropdownResultLevel = dropdownTextLevel;
-    dropdownResult = (dropdownResultLevel * dropdownResultValue)*4 + "$";
+    dropdownResult = Math.round((dropdownResultLevel * dropdownResultValue * dropdownResultLang)*4) + "$";
+    document.getElementById("dropdownResultDisplay").innerHTML = dropdownResult;
+}
+
+function dropdownLang(dropdownLang, dropdownLangLevel) {
+    document.getElementById("dropdownLangDisplay").innerHTML = dropdownLang;
+    dropdownResultLang = dropdownLangLevel;
+    console.log(dropdownResultLevel);
+    console.log(dropdownResultValue);
+    console.log(dropdownResultLang);
+    dropdownResult = Math.round((dropdownResultLevel * dropdownResultValue * dropdownResultLang)*4) + "$";
+    console.log(dropdownResult);
     document.getElementById("dropdownResultDisplay").innerHTML = dropdownResult;
 }
 
@@ -75,8 +86,23 @@ document.getElementById("dropdownTexts").querySelectorAll('.money-form__dropdown
     dropdownLevel("Опытная", 100);
 });
 document.getElementById("dropdownTexts").querySelectorAll('.money-form__dropdown-text')[2].addEventListener('click',function (){
-    dropdownLevel("Топ модель", 300);
+    dropdownLevel("Топ модель", 200);
 });
+
+// listeners dropdownLang
+document.getElementById("dropdownLang").querySelectorAll('.money-form__dropdown-text')[0].addEventListener('click',function (){
+    dropdownLang("Базовый", 1); 
+});
+document.getElementById("dropdownLang").querySelectorAll('.money-form__dropdown-text')[1].addEventListener('click',function (){
+    dropdownLang("Средний", 1.1);
+});
+document.getElementById("dropdownLang").querySelectorAll('.money-form__dropdown-text')[2].addEventListener('click',function (){
+    dropdownLang("Разговорный", 1.2);
+});
+document.getElementById("dropdownLang").querySelectorAll('.money-form__dropdown-text')[3].addEventListener('click',function (){
+    dropdownLang("Профессиональный", 1.3);
+});
+console.log("228");
 
 // dropdownLevel function
 document.getElementById("dropdownLevelButton").addEventListener('click',function (){
@@ -95,6 +121,14 @@ document.getElementById("dropdownValueButton").addEventListener('click',function
         document.getElementById("dropdownValues").classList.add("money-form__dropdown--hidden");
     }
 });  
+ // dropdownValue function
+document.getElementById("dropdownLangButton").addEventListener('click',function (){
+    if(document.getElementById("dropdownLang").classList.contains("money-form__dropdown--hidden")) {
+        document.getElementById("dropdownLang").classList.remove("money-form__dropdown--hidden");
+    } else {
+        document.getElementById("dropdownLang").classList.add("money-form__dropdown--hidden");
+    }
+});  
 
  
 // функция открытия бокового меню
@@ -104,6 +138,11 @@ document.getElementById("sidenavOpen").addEventListener('click',function (){
 }); 
 // функция закрытия бокового меню
 document.getElementById("sidenavClose").addEventListener('click',function (){
+    document.getElementById("sidenav").classList.add("side-nav--hidden");
+    document.getElementById("sidenavPlaceholder").classList.add("side-nav__placeholder--hidden");
+}); 
+// функция закрытия бокового меню при нажатии на серую зону
+document.getElementById("sidenavPlaceholder").addEventListener('click',function (){
     document.getElementById("sidenav").classList.add("side-nav--hidden");
     document.getElementById("sidenavPlaceholder").classList.add("side-nav__placeholder--hidden");
 }); 

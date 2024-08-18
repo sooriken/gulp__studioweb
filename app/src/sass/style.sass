@@ -17,10 +17,16 @@ $colorLight: #F2F7FB
 //$colorGray:  #f9c9dd
 $colorGray:  #e9e9e9
 $colorMain:  #DF7DA6  
-$colorDark:  #cc6f8f        
+$colorDark:  #cc6f8f   
+
+
+html
+    font-family: "Russo One", sans-serif
+    font-family: "Cuprum", sans-serif
+    font-family: "Ubuntu", sans-serif
 
 @mixin titleBlock
-    font-size: 45px
+    font-size: 3rem
     text-align: center
     display: flex
     flex-direction: column
@@ -28,7 +34,7 @@ $colorDark:  #cc6f8f
     font-weight: bold
 
 @mixin title
-    font-size: 60px
+    font-size: 4rem
     text-align: center
     position: relative
     display: inline-block
@@ -53,11 +59,11 @@ $colorDark:  #cc6f8f
     &__image
         margin-bottom: 50px
     &__img
-        max-width: 80%
+        max-width: 70%
         margin: 0 auto
     &__text
         margin-top: 50px
-        font-size: 45px
+        font-size: 3rem
         text-align: center
         font-weight: bold
 // burger button
@@ -93,7 +99,7 @@ $colorDark:  #cc6f8f
     &--flirt
         margin: 50px auto 0
         padding-right: 48px
-        max-width: 250px
+        max-width: 300px
         background-color: $colorLight
         color: $colorDark
         &:hover
@@ -183,7 +189,7 @@ $colorDark:  #cc6f8f
         z-index: 10
         margin: auto 0
     &__logo
-        font-size: 40px
+        font-size: 3rem
         color: $colorDark
         z-index: 10
         margin-top: 100px
@@ -195,10 +201,11 @@ $colorDark:  #cc6f8f
             height: auto
         &-geo
             margin-top: 25px
-            font-size: 16px
+            font-size: 1.5rem
             color: #000
+            font-weight: bold
     &__title
-        font-size: 60px
+        font-size: 4rem
         font-weight: bold
 
 // earn блок
@@ -208,7 +215,7 @@ $colorDark:  #cc6f8f
     padding: 100px 200px 50px
     grid-template-columns: 1fr 2fr
     gap: 50px
-    font-size: 24px
+    font-size: 1.5rem
     &__title
         @include titleBlock
         &-image
@@ -244,9 +251,10 @@ $colorDark:  #cc6f8f
             color: $colorLight
         &-title
             font-weight: bold
-            font-size: 32px
+            font-size: 2rem
         &-text
             margin-top: 25px
+            font-size: 1.25rem
             
 // support блок
 .support
@@ -255,7 +263,7 @@ $colorDark:  #cc6f8f
         margin: 0 auto
         padding-bottom: 25px
         text-align: center
-        font-size: 45px
+        font-size: 3rem
         font-weight: bold
         position: relative
         &::after
@@ -333,20 +341,34 @@ $colorDark:  #cc6f8f
         
     &__title
         text-align: center
-        font-size: 45px
+        font-size: 3rem
         font-weight: bold
     &__subtitle 
         max-width: 50%
         margin: 50px auto 0
         text-align: center
+        font-size: 1.5rem
 // блок "тачки"
 .gain
     padding: 100px 200px
+    &__title
+        text-align: center
+        &-image
+            max-width: 50%
+            margin: 0 auto
+        &-img
+            width: 100%
+            height: auto
+            display: block
+            margin: 0 auto
+        &-text
+            @include title
+            &::after
+                @include titleAfter
     &__inner
         display: flex
-        margin-top: 25px
     &__title
-        font-size: 45px
+        font-size: 3rem
         text-align: center
         font-weight: bold
         margin: 0 auto
@@ -377,7 +399,7 @@ $colorDark:  #cc6f8f
         color: $colorLight
         font-weight: bold
         line-height: 50px
-        font-size: 24px
+        font-size: 1.5rem
         cursor: pointer
         margin: auto 0 auto 50px
     &__left
@@ -390,7 +412,7 @@ $colorDark:  #cc6f8f
         color: $colorLight
         font-weight: bold
         line-height: 50px
-        font-size: 24px
+        font-size: 1.5rem
         cursor: pointer
         margin: auto 50px auto 0
 // блок "про деньги"
@@ -429,12 +451,12 @@ $colorDark:  #cc6f8f
         color: $colorLight
         border-radius: 25px
         &__title
-            font-size: 30px
+            font-size: 2rem
             text-align: center
         &__inner
             margin-top: 25px
         &__label
-            font-size: 12px
+            font-size: 1rem
         &__item
             margin-top: 5px
             padding: 25px
@@ -444,7 +466,7 @@ $colorDark:  #cc6f8f
             justify-content: space-between
             color: $colorDark
             line-height: 20px
-            font-size: 20px
+            font-size: 1.5rem
             cursor: pointer
             transition: all .3s linear
             background-color: $colorMain
@@ -488,7 +510,7 @@ $colorDark:  #cc6f8f
             padding: 20px 10px
             background-color: $colorLight
             border-radius: 25px
-            font-size: 20px
+            font-size: 1.5rem
             line-height: 20px
             color: $colorDark
             text-align: center
@@ -499,6 +521,12 @@ $colorDark:  #cc6f8f
     display: flex
     flex-direction: column
     min-height: 600px
+    &__image
+        max-width: 40%
+        margin: 0 auto
+    &__img
+        width: 100%
+        height: auto
     &__title
         &-image
             max-width: 40%
@@ -513,11 +541,10 @@ $colorDark:  #cc6f8f
             &::after
                 @include titleAfter
     &__inner
-        display: grid
-        grid-template-columns: 1fr 1fr
+        //display: grid
+        grid-template-columns: 1fr 2fr
         gap: 50px
         flex-grow: 1
-        margin-top: 50px
     &-item
         background-color: $colorMain
         border-radius: 25px
@@ -525,14 +552,15 @@ $colorDark:  #cc6f8f
         color: $colorLight
         &__inner
             display: grid
-            grid-template-columns: 1fr 1fr
+            grid-template-columns: 1fr 1fr 1fr 1fr
             grid-template-rows: auto auto
-            gap: 20px
+            gap: 25px
+            margin-top: 50px
         &__image
-            width: 80%
+            width: 75%
             margin: 0 auto
             aspect-ratio: 1/1
-            background: $colorDark
+            //background: $colorDark
             border-radius: 25px
             position: relative
         &__img
@@ -545,11 +573,11 @@ $colorDark:  #cc6f8f
             border-radius: 25px
         &__title
             color: #fff
-            font-size: 24px
+            font-size: 1.5rem
             font-weight: bold
             margin-top: 25px
         &__text
-            font-size: 16px
+            font-size: 1rem
             margin-top: 10px
 // блок "работая с нами"
 .collab
@@ -568,10 +596,10 @@ $colorDark:  #cc6f8f
             margin-top: 0
         &__title
             font-weight: bold
-            font-size: 24px
+            font-size: 1.5rem
         &__text
             margin-top: 10px
-            font-size: 16px
+            font-size: 1rem
     &__title
         @include titleBlock
         &-image
@@ -583,7 +611,7 @@ $colorDark:  #cc6f8f
             width: 50%
             height: auto
             left: 50%
-            top: 0
+            top: 25px
             transform: translate(-50%, -50%)
             background-color: $colorMain
             border-radius: 50%
@@ -634,7 +662,7 @@ $colorDark:  #cc6f8f
                 border-radius: 50%
             &-name
                 line-height: 75px
-                font-size: 20px
+                font-size: 1.5rem
                 font-weight: bold
                 margin-left: 25px
             &-img
@@ -645,14 +673,14 @@ $colorDark:  #cc6f8f
             @include titleBlock
         &__text
             margin-top: 25px
-            font-size: 16px
+            font-size: 1rem
 //блок "на дому"
 .home
     padding: 100px 200px
     &__title
         text-align: center
         &-image
-            max-width: 30%
+            max-width: 25%
             margin: 0 auto
         &-img
             width: 100%
@@ -669,9 +697,10 @@ $colorDark:  #cc6f8f
         display: grid
         grid-template-columns: 1fr 1fr
         gap: 25px
-        margin-top: 50px
+        margin-top: 25px
         &--first
             grid-template-columns: 1fr 3fr
+            margin-top: 50px
             & .home-item__title-inner
                 max-width: 50%
     &-item
@@ -680,10 +709,10 @@ $colorDark:  #cc6f8f
         color: $colorLight
         border-radius: 25px
         position: relative
-        font-size: 24px
+        font-size: 1.5rem
         display: flex
         flex-direction: column
-        min-height: 400px  
+        min-height: 250px  
         &__img
             position: absolute
             bottom: 50%
@@ -695,7 +724,7 @@ $colorDark:  #cc6f8f
         &__title
             font-weight: bold 
             color: $colorGray
-            font-size: 38px
+            font-size: 2rem
             &-inner
                 display: flex
                 flex-direction: column
@@ -712,11 +741,11 @@ $colorDark:  #cc6f8f
 // блок "частые вопросы"
 .faq
     display: grid
-    min-height: 700px
+    min-height: 550px
     padding: 100px 200px
     grid-template-columns: 1fr 1fr
     gap: 50px
-    font-size: 24px
+    font-size: 1.5rem
     position: relative
     &__title
         display: flex
@@ -725,7 +754,7 @@ $colorDark:  #cc6f8f
         &-image
             position: relative
         &-text
-            max-width: 60%
+            max-width: 85%
             margin: 0 auto
             margin-bottom: 25px
         &-img
@@ -788,7 +817,7 @@ $colorDark:  #cc6f8f
             border-radius: 5px
         &-title
             font-weight: bold
-            font-size: 28px
+            font-size: 2rem
             color: $colorGray
         &-text
             flex-grow: 1
@@ -808,14 +837,27 @@ $colorDark:  #cc6f8f
 // блок "видео"
 .video
     display: grid
-    grid-template-columns: 3fr 2fr
     padding: 100px 200px
-    gap: 50px
+    &__title
+        text-align: center
+        &-image
+            max-width: 38%
+            margin: 0 auto
+        &-img
+            width: 100%
+            height: auto
+            display: block
+            margin: 0 auto
+        &-text
+            @include title
+            &::after
+                @include titleAfter
     &__item
-        //aspect-ratio: 16/9
+        aspect-ratio: 16/9
         background-color: $colorMain
         position: relative
         overflow: hidden
+        margin-top: 25px
         &-source
             //position: absolute
             width: 100%
@@ -837,7 +879,7 @@ $colorDark:  #cc6f8f
     &__title
         text-align: center
         font-weight: bold
-        font-size: 34px
+        font-size: 2rem
     &__subtitle
         margin-top: 5px
         text-align: center
@@ -881,7 +923,7 @@ $colorDark:  #cc6f8f
     right: 0
     background-color: $colorGray
     color: $colorDark
-    font-size: 24px
+    font-size: 1.5rem
     transition: all .4s ease-out
     visibility: visible
     transform: translateX(0px)
@@ -891,7 +933,7 @@ $colorDark:  #cc6f8f
         visibility: hidden
         transform: translateX(100%)
     &__close
-        font-size: 32px
+        font-size: 2rem
         display: inline-block
         height: 50px
         width: 50px

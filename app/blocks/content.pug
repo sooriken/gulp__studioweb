@@ -30,7 +30,7 @@ mixin content
                     .earn__item-text Наши администраторы помогут на твоем пути, предоставляя весь объем информации необходимой для работы, даже если ты начинаешь с нуля.
                 .earn__item.earn__item--blue 
                     .earn__item-title Будь собой.  
-                    .earn__item-text Каждый из нас уникален.     нас есть то, чего нет у других. Находи свои сильные стороны и используй их в работе. Мы создаем личный бренд, а не работаем по шаблону.
+                    .earn__item-text Каждый из нас уникален, в нас есть то, чего нет у других. Мы найдем и раскроем твои сильные стороны, которые помогут тебе в работе. Мы создаем личный бренд, а не работаем по шаблону.
                 .earn__item.earn__item--blue
                     .earn__item-title Дисциплина.
                     .earn__item-text  Работай и зарабатывай. Правильно выстроенный график и целеустремленность - это путь к успеху.
@@ -46,41 +46,40 @@ mixin content
                 .support-list__inner
                     .support-list__item выплаты
                     .support-list__item.support-list__item--main поддержка
-                    .support-list__item продвижение на площадках
+                    .support-list__item продвижение
                     .support-list__item организация пространства
                     .support-list__item.support-list__item--main обеспечение безопасности
                     .support-list__item постановка ракурса
-                    .support-list__item.support-list__item--main настройка оборудования
-                    .support-list__item создание шоу
+                    //.support-list__item настройка оборудования
+                    .support-list__item.support-list__item--main создание шоу
         // блок "про безопасность"
         .safety(id="blockSafety")
             .safety__inner
-                .ask__inner
-                    .ask__image
-                        img.ask__img(src="../images-min/title/title-image__safety.png")
-                    .ask__text Почему ты можешь не переживать что тебя узнают на улице?
+                .safety__inner
+                    .safety__image
+                        img.safety__img(src="../images-min/title/title-image__safety.png")
+                    //.ask__text Почему ты можешь быть уверен в своей анонимности?
                 .safety-item__inner
                     .safety-item
                         .safety-item__image
                             img.safety-item__img(src="../images-min/safety/safety-image__1.png")
                         .safety-item__title Дистанция
-                        .safety-item__text Контакт с пользователями происходит только через чат. Никакого живого контакта. Никто не будет знать твоё настоящее имя и место нахождения.
+                        .safety-item__text Контакт с пользователями происходит на иностранных сайтах через онлайн чат. Никакого живого контакта.
                     .safety-item
                         .safety-item__image
                             img.safety-item__img(src="../images-min/safety/safety-image__2.png")
                         .safety-item__title Приватность
-                        .safety-item__text Вся личная информация защищена нашим сервисом. Доступ к информации связанной с тобой будет иметь только твой личный менеджер
+                        .safety-item__text Вся личная информация защищена нашим сервисом. Доступ к твоей личной информации есть только у тебя.
                     .safety-item
                         .safety-item__image
                             img.safety-item__img(src="../images-min/safety/safety-image__3.png")
                         .safety-item__title Выбор
-                        .safety-item__text Ты сама решаешь с кем ты хочешь вести диалог.
-                        .safety-item__text Ты всегда можешь сказать нет или заблокировать пользователя.
+                        .safety-item__text Ты сама решаешь с кем ты хочешь вести диалог, а с кем нет.
                     .safety-item
                         .safety-item__image
                             img.safety-item__img(src="../images-min/safety/safety-image__4.png")
                         .safety-item__title Локация
-                        .safety-item__text Ты выбираешь как и на какие страны и регионы вести трансляцию, а твой личный менеджер подскажет как делать это максимально эффективно.
+                        .safety-item__text Ты выбираешь на какие страны и регионы вести трансляцию, а твой личный менеджер подскажет как делать это максимально эффективно.
         // блок "флиртуй"
         .flirt(id="blockFlirt")
             .flirt__inner
@@ -89,22 +88,27 @@ mixin content
                 .flirt__emoji
                     img.flirt__emoji-img(src="../images-min/flirt/flirt-image__2.png")
                 .flirt__title Флиртуй. Общайся. Удивляй.
-                .flirt__subtitle Общайся со зрителями и интересуйся их предпочтениями, создавай приятную романтическую атмосферу. Личный менеджер поможет с созданием твоего уникального шоу.
+                .flirt__subtitle Зарабатывай легко, заводя новые знакомства, рассказывая о себе и общаясь с другими пользователем. Быстро и легко - то как должны зарабатываться деньги.
                 a.button.button--flirt(href="#blockFeedback")
                     span Хочу попробовать 
                     .button-image + 
         // блок "тачки"
         .gain(id="blockGain")
-            .gain__title Меняй свою жизнь
+            .gain__title 
+                .gain__title-image
+                    img.gain__title-img(src="../images-min/title/title-image__gain.png")
             .gain__inner
                 .gain__left(id="gainLeft") <
                 .gain-item__inner(id="gainSlider")
                     .gain-item.gain-item--active
-                        img.gain-item__image(src="https://loremflickr.com/g/1920/1080/paris")
+                        img.gain-item__image(src="../images-min/slider/1.png")
                     .gain-item
-                        img.gain-item__image(src="https://loremflickr.com/g/1920/1080/jewerly")
+                        img.gain-item__image(src="../images-min/slider/2.png")
                     .gain-item
-                        img.gain-item__image(src="https://loremflickr.com/g/1920/1080/car")
+                        img.gain-item__image(src="../images-min/slider/3.png")
+                    .gain-item
+                        img.gain-item__image(src="../images-min/slider/4.png")
+                        
                 .gain__right(id="gainRight") >
         // блок "на дому"
         .home(id="blockHome")
@@ -112,12 +116,12 @@ mixin content
                 .home__title-image
                     img.home__title-img(src="../images-min/title/title-image__home.png")
             .home__inner.home__inner--first
-                .home__subtitle Что нужно для работы из дома?
+                .home__subtitle Что тебе понадобится:
                 .home-item
                     .home-item__icon
                     .home-item__title-inner
-                        .home-item__title Интернет.
-                        .home-item__subtitle Понадобится хорошая скорость интернета для качественных трансляций.
+                        .home-item__title Пространство.
+                        .home-item__subtitle Мы поможем с организацией рабочего пространства
                     .home-item__image
                         img.home-item__img(src="../images-min/home/home-image__1.png")
             .home__inner
@@ -125,13 +129,13 @@ mixin content
                     .home-item__icon
                     .home-item__title-inner
                         .home-item__title Оборудование.
-                        .home-item__subtitle Вебкамера, свет и компьютер.
+                        .home-item__subtitle Мы предоставим все необходимое оборудование
                 .home-item
                     .home-item__icon
                     .home-item__title-inner
                         .home-item__title Дисциплина.
-                        .home-item__subtitle Желание работать и четко выстроенный график. 
-            .home__remark *Это те вещи, которые понадобятся тебе для старта. НО если у тебя нет оборудования - наша студия может его предоставить.  
+                        .home-item__subtitle Желание зарабатывать и дисциплинированность 
+            //.home__remark *Это те вещи, которые понадобятся тебе для старта. НО если у тебя нет оборудования - наша студия может его предоставить.  
         // блок "работай с нами"
         .collab(id="blockCollab")
             .collab__inner
@@ -141,7 +145,7 @@ mixin content
                 .collab-item
                     .collab-item__title Свободу выбора
                     .collab-item__text Выбирай удобные для тебя время и график работы.
-                .collab-item
+                //.collab-item
                     .collab-item__title Лучшие площадки
                     .collab-item__text Мы работаем с самыми популярными площадками, где всегда есть платежеспособные пользователи.
                 .collab-item
@@ -151,7 +155,7 @@ mixin content
                     .collab-item__title Обучение
                     .collab-item__text Наша команда обучит всем тонкостям и аспектам этой работы.
             .collab__title 
-                .collab__title-text Работая с нами ты получишь
+                .collab__title-text Работая с нами ты получишь:
                 .collab__title-image
                     img.collab__title-img(src="../images-min/collab/collab-image__1.png")
         // блок "про деньги"
@@ -185,6 +189,17 @@ mixin content
                                     .money-form__dropdown-text 5
                                     .money-form__dropdown-text 6
                                     .money-form__dropdown-text 7
+                        .money-form__inner
+                            .money-form__label Знание английского:
+                            .money-form__item(id="dropdownLangButton")
+                                .money-form__item-price(id="dropdownLangDisplay") Базовый
+                                .money-form__item-icon
+                                // "--hidden" modifier
+                                .money-form__dropdown.money-form__dropdown--hidden(id="dropdownLang")
+                                    .money-form__dropdown-text Базовый
+                                    .money-form__dropdown-text Средний
+                                    .money-form__dropdown-text Разговорный
+                                    .money-form__dropdown-text Профессиональный
                         .money-form__inner
                             .money-form__label Доход в месяц:
                             .money-form__result(id="dropdownResultDisplay") 800$   
@@ -227,28 +242,24 @@ mixin content
                     .faq__item-text Мы 24/7 рядом и всегда готовы помочь. Работая в офисе или из дома, ты всегда получишь техническую помощь с любым возникшем вопросом. 
                 .faq__item
                     .faq__item-title Обучение
-                    .faq__item-text С нами не страшно начинать. Мы полностью подготовим тебя для выхода в трансляцию. Уверенный и хороший старт – залог успешного будущего в этой сфере. На протяжении всего твоего пути, наша команда будет курировать тебя и помогать. 
+                    .faq__item-text С нами не страшно начинать. Мы полностью подготовим тебя для выхода в трансляцию.
+                    .faq__item-text На протяжении всего твоего пути, наша команда будет курировать тебя и помогать. 
                 .faq__item
                     .faq__item-title Подготовка к работе
                     .faq__item-text Вместе подбираем подходящие тебе площадки, помогаем с идеей шоу и ее реализацией.
-                    .faq__item-text Настраиваем все необходимое для работы оборудование.
-                    .faq__item-text Регистрируем аккаунты на выбранных тобой площадках, занимаемся их заполнением и оформлением.
                     .faq__item-text Обучаем всему необходимому, чтобы можно было спокойно и уверено выйти в онлайн.
                 .faq__item
                     .faq__item-title Выплаты
-                    .faq__item-text Мы работаем с зарубежными площадками, в связи с чем большие трудности могут появиться при выводе средств. Поэтому все эти трудности будут на наших плечах. Мы возьмем все эти проблемы на себя.
-                    .faq__item-text Работая с разными банками и платежными системами, мы обеспечим бесперебойный вывод средств.
-                    .faq__item-text Выплаты без задержек два раза месяц. Возможность брать авансы.
+                    .faq__item-text Ежедневные выплаты для новых моделей. Выплаты без задержек два раза в месяц с возможностью брать авансы.
             .faq__item-right(id="sliderRight") > 
         // блок "видео"
         .video
+            .video__title 
+                .video__title-image
+                    img.video__title-img(src="../images-min/title/title-image__rooms.png")
             .video__item
                 video.video__item-source(controls="controls" autoplay)
                     source(src="../src/video/test.mp4")
-            .ask__inner
-                    .ask__image
-                        img.ask__img(src="../images-min/title/title-image__money.png")
-                    .ask__text Наши видео
         // блок "обратная связь"
         .feedback(id="blockFeedback")
             .feedback__inner
@@ -272,10 +283,10 @@ mixin content
                 // "--active" модификатор
                 a.side-nav__button(href="#blockEarn") Заработок 
                 a.side-nav__button(href="#blockSafety") Про безопасность
-                a.side-nav__button(href="#blockFlirt") Создай своё шоу
+                //a.side-nav__button(href="#blockFlirt") Создай своё шоу
                 a.side-nav__button(href="#blockGain") Меняй свою жизнь
                 a.side-nav__button(href="#blockHome") Работа на дому
-                a.side-nav__button(href="#blockCollab") Работай с нами
+                //a.side-nav__button(href="#blockCollab") Работай с нами
                 a.side-nav__button(href="#blockMoney") Калькулятор дохода
                 a.side-nav__button(href="#blockReview") Отзывы
                 a.side-nav__button(href="#blockFaq") Частые вопросы
