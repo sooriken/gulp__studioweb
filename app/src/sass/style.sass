@@ -58,8 +58,14 @@ html
         justify-content: center
     &__image
         margin-bottom: 50px
+        height: 100px
+        width: 100%
+        & > picture
+            height: 100%
+            width: 100%
     &__img
-        max-width: 70%
+        height: 100%
+        width: auto
         margin: 0 auto
     &__text
         margin-top: 50px
@@ -73,8 +79,8 @@ html
     height: 48px
     background-color: $colorMain
     border-radius: 50%
-    top: 25px
-    right: 25px
+    top: 24px
+    right: 24px
     z-index: 15 
     cursor: pointer
     &__line
@@ -99,7 +105,6 @@ html
     &--flirt
         margin: 50px auto 0
         padding-right: 48px
-        max-width: 300px
         background-color: $colorLight
         color: $colorDark
         &:hover
@@ -114,7 +119,6 @@ html
             background-color: $colorMain
             color: $colorLight
     &--feedback
-        max-width: 100%
         width: 100%
         text-align: center
         margin-top: 25px
@@ -216,6 +220,7 @@ html
     grid-template-columns: 1fr 2fr
     gap: 50px
     font-size: 1.5rem
+    flex-grow: 1
     &__title
         @include titleBlock
         &-image
@@ -223,13 +228,10 @@ html
             position: relative
         &-img
             display: block
-            position: absolute
-            width: 80%
+            max-width: 50%
             height: auto
-            left: 50%
-            top: 0
-            transform: translate(-50%, -50%)
-            max-width: 200px
+            margin: 0 auto
+            //max-width: 200px
         &-text
             flex-grow: 1
             display: flex
@@ -245,8 +247,10 @@ html
         border: 2px solid $colorDark
         padding: 25px
         border-radius: 25px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
         &--blue
-            //ckground: linear-gradient(180deg, $colorMain 0%, $colorLight 100%)
             background-color: $colorMain
             color: $colorLight
         &-title
@@ -321,20 +325,22 @@ html
         color: $colorLight
         position: relative
         z-index: 17
+        flex-grow: 1
+        display: flex
+        flex-direction: column
     &__emoji
-        width: 15%
+        width: 17%
         aspect-ratio: 1/1
         position: absolute
         background-color: $colorLight
         border-radius: 50%
-        max-width: 200px
         &-img
             width: 100%
             height: auto
             border-radius: 50%    
         &:nth-child(1)
-            left: 10%
-            bottom: 20%
+            left: 8%
+            top: 20%
         &:nth-child(2)
             right: 5%
             bottom: 10%
@@ -348,23 +354,25 @@ html
         margin: 50px auto 0
         text-align: center
         font-size: 1.5rem
+        flex-grow: 1
+        display: flex
+        flex-direction: column
+        justify-content: center
 // блок "тачки"
 .gain
     padding: 100px 200px
     &__title
         text-align: center
-        &-image
-            max-width: 50%
-            margin: 0 auto
+        height: 100px
+        width: auto
+        margin: 0 auto
+        & > picture
+            height: 100%
+            width: auto
         &-img
-            width: 100%
-            height: auto
-            display: block
+            height: 100%
+            width: auto
             margin: 0 auto
-        &-text
-            @include title
-            &::after
-                @include titleAfter
     &__inner
         display: flex
     &__title
@@ -438,23 +446,32 @@ html
         display: grid
         grid-template-columns: 1fr 1fr
         gap: 50px
-        margin-top: 50px
     &__ask
         @include titleBlock
         //text-shadow: 0px 0px 5px $colorDark, 0 0 25px $colorMain
     &__forms
         margin-top: 40px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        flex-grow: 1
     &-form
         padding: 20px
         background: $colorDark
         //box-shadow: 0px 0px 20px 10px $colorMain
         color: $colorLight
         border-radius: 25px
+        display: flex
+        flex-direction: column
         &__title
             font-size: 2rem
             text-align: center
         &__inner
             margin-top: 25px
+            &:last-child > .money-form__label
+                text-align: center
+                font-weight: bold
+                font-size: 1.25rem
         &__label
             font-size: 1rem
         &__item
@@ -487,12 +504,12 @@ html
             background-color: $colorMain
             left: 50%
             top: 0
-            transform: translate(-50%, 70px)
+            transform: translate(-50%, 95px)
+            border: 2px solid $colorDark
             border-radius: 25px
             padding: 10px 20px
             z-index: 17
             visibility: visible
-            max-height: 150px
             overflow-y: scroll
             overflow-x: hidden
             -ms-overflow-style: none
@@ -520,7 +537,6 @@ html
     padding: 100px 200px 
     display: flex
     flex-direction: column
-    min-height: 600px
     &__image
         max-width: 40%
         margin: 0 auto
@@ -528,41 +544,44 @@ html
         width: 100%
         height: auto
     &__title
-        &-image
-            max-width: 40%
-            margin: 0 auto
+        text-align: center
+        height: 100px
+        width: auto
+        margin: 0 auto
+        & > picture
+            height: 100%
+            width: auto
         &-img
-            width: 100%
-            height: auto
-            display: block
+            height: 100%
+            width: auto
             margin: 0 auto
-        &-text
-            @include title
-            &::after
-                @include titleAfter
     &__inner
-        //display: grid
-        grid-template-columns: 1fr 2fr
-        gap: 50px
+        display: flex
+        flex-direction: column
         flex-grow: 1
     &-item
         background-color: $colorMain
         border-radius: 25px
         padding: 25px
         color: $colorLight
+        display: flex
+        flex-direction: column
         &__inner
             display: grid
             grid-template-columns: 1fr 1fr 1fr 1fr
-            grid-template-rows: auto auto
             gap: 25px
             margin-top: 50px
+            flex-grow: 1
         &__image
             width: 75%
             margin: 0 auto
             aspect-ratio: 1/1
-            //background: $colorDark
             border-radius: 25px
             position: relative
+            display: flex
+            flex-direction: column
+            justify-content: center
+            flex-grow: 1
         &__img
             width: 100%
             height: auto
@@ -585,6 +604,11 @@ html
     display: grid
     grid-template-columns: 1fr 1fr
     gap: 50px
+    &__inner
+        display: flex
+        flex-direction: column
+        justify-content: center
+        flex-grow: 1
     &-item
         margin-top: 25px
         padding: 25px
@@ -592,32 +616,34 @@ html
         background-color: $colorMain
         color: $colorLight
         text-align: center
+        flex-grow: 1
+        display: flex
+        flex-direction: column
+        justify-content: space-between
         &:first-child
             margin-top: 0
         &__title
             font-weight: bold
-            font-size: 1.5rem
+            font-size: 1.75rem
         &__text
             margin-top: 10px
-            font-size: 1rem
+            font-size: 1.25rem
     &__title
         @include titleBlock
         &-image
-            flex-grow: 1
+            height: 50%
             position: relative
-        &-img
-            display: block
-            position: absolute
-            width: 50%
-            height: auto
-            left: 50%
-            top: 25px
-            transform: translate(-50%, -50%)
-            background-color: $colorMain
-            border-radius: 50%
-            max-width: 256px
+            & > picture
+                height: 100%
+                & > img
+                    height: 80%
+                    width: auto
+                    display: block
+                    background-color: $colorMain
+                    border-radius: 50%
+                    margin: 0 auto
         &-text
-            flex-grow: 1
+            height: 50%
             flex-direction: column
             display: flex
             justify-content: center
@@ -625,34 +651,40 @@ html
 // блок "отзывы"
 .review
     padding: 100px 200px 
+    &__inner
+        flex-grow: 1
+        display: flex
+        flex-direction: column
     &__title
         text-align: center
-        &-image
-            max-width: 35%
-            margin: 0 auto
+        height: 100px
+        width: auto
+        margin: 0 auto
+        & > picture
+            height: 100%
+            width: auto
         &-img
-            width: 100%
-            height: auto
-            display: block
+            height: 100%
+            width: auto
             margin: 0 auto
-        &-text
-            @include title
-            &::after
-                @include titleAfter
-    &__inner
-        margin-top: 50px
     &-item
         background-color: $colorMain
         padding: 25px
         border-radius: 25px
         color: $colorLight
+        display: flex
+        flex-direction: column
+        justify-content: space-between
         &:first-child
             margin-top: 0
+            grid-column: span 2
         &__inner
             display: grid
             grid-template-columns: 1fr 1fr
-            grid-template-rows: 1fr auto
+            grid-template-rows: 1fr 1fr
             gap: 25px
+            margin-top: 50px
+            flex-grow: 1
         &__header
             display: flex
             &-logo
@@ -673,24 +705,22 @@ html
             @include titleBlock
         &__text
             margin-top: 25px
-            font-size: 1rem
+            font-size: 1.5rem
 //блок "на дому"
 .home
     padding: 100px 200px
     &__title
         text-align: center
-        &-image
-            max-width: 25%
-            margin: 0 auto
+        height: 100px
+        width: auto
+        margin: 0 auto
+        & > picture
+            height: 100%
+            width: auto
         &-img
-            width: 100%
-            height: auto
-            display: block
+            height: 100%
+            width: auto
             margin: 0 auto
-        &-text
-            @include title
-            &::after
-                @include titleAfter
     &__subtitle
         @include titleBlock
     &__inner
@@ -698,6 +728,7 @@ html
         grid-template-columns: 1fr 1fr
         gap: 25px
         margin-top: 25px
+        flex-grow: 1
         &--first
             grid-template-columns: 1fr 3fr
             margin-top: 50px
@@ -741,7 +772,6 @@ html
 // блок "частые вопросы"
 .faq
     display: grid
-    min-height: 550px
     padding: 100px 200px
     grid-template-columns: 1fr 1fr
     gap: 50px
@@ -825,6 +855,10 @@ html
             flex-direction: column
             justify-content: flex-end
             margin-top: 20px
+            & > span
+                display: block
+                &:nth-of-type(2)
+                    margin-top: 25px
         &--active
             display: flex
             visibility: visible
@@ -840,24 +874,22 @@ html
     padding: 100px 200px
     &__title
         text-align: center
-        &-image
-            max-width: 38%
-            margin: 0 auto
+        height: 100px
+        width: auto
+        margin: 0 auto
+        & > picture
+            height: 100%
+            width: auto
         &-img
-            width: 100%
-            height: auto
-            display: block
+            height: 100%
+            width: auto
             margin: 0 auto
-        &-text
-            @include title
-            &::after
-                @include titleAfter
     &__item
         aspect-ratio: 16/9
         background-color: $colorMain
         position: relative
         overflow: hidden
-        margin-top: 25px
+        margin-top: 50px
         &-source
             //position: absolute
             width: 100%
@@ -871,7 +903,7 @@ html
     &__inner
         display: flex
         flex-direction: column
-        max-width: 50%
+        min-width: 50%
         margin: 0 auto
         background-color: $colorMain
         border-radius: 25px
@@ -886,6 +918,9 @@ html
         color: $colorGray
     &__form
         margin-top: 25px
+        flex-grow: 1
+        display: flex
+        flex-direction: column
     &__label
         margin-top: 25px
         color: $colorGray

@@ -6,7 +6,7 @@ mixin content
             .burger-button__line
             .burger-button__line
         // первый блок
-        .welcome(id="blockWelcome")
+        .welcome.block(id="blockWelcome")
             .welcome-bg.welcome-bg--left
             .welcome-bg.welcome-bg--right
             .welcome__logo
@@ -19,45 +19,45 @@ mixin content
                     span Работать
                     .button-image + 
         // блок "заработок"
-        .earn(id="blockEarn")
-            .earn__title
-                .earn__title-text Зарабатывать от 1000$ в месяц реально
-                .earn__title-image
-                    img.earn__title-img(src="../images-min/earn/earn-image__1.png")
-            .earn__inner
-                .earn__item 
-                    .earn__item-title Обучайся.
-                    .earn__item-text Наши администраторы помогут на твоем пути, предоставляя весь объем информации необходимой для работы, даже если ты начинаешь с нуля.
-                .earn__item.earn__item--blue 
-                    .earn__item-title Будь собой.  
-                    .earn__item-text Каждый из нас уникален, в нас есть то, чего нет у других. Мы найдем и раскроем твои сильные стороны, которые помогут тебе в работе. Мы создаем личный бренд, а не работаем по шаблону.
-                .earn__item.earn__item--blue
-                    .earn__item-title Дисциплина.
-                    .earn__item-text  Работай и зарабатывай. Правильно выстроенный график и целеустремленность - это путь к успеху.
-                .earn__item 
-                    .earn__item-title Интересуйся.
-                    .earn__item-text Неподдельный интерес - тоже способ развития. Спрашивай, изучай, узнавай.
-        // блок "поддержка"
-        .support(id="blockSupport")
-            .support__title Наша команда администраторов поможет во всём остальном
-            .support__emoji
-            .support__emoji
-            .support-list
-                .support-list__inner
-                    .support-list__item выплаты
-                    .support-list__item.support-list__item--main поддержка
-                    .support-list__item продвижение
-                    .support-list__item организация пространства
-                    .support-list__item.support-list__item--main обеспечение безопасности
-                    .support-list__item постановка ракурса
-                    //.support-list__item настройка оборудования
-                    .support-list__item.support-list__item--main создание шоу
+        .block
+            .earn(id="blockEarn")
+                .earn__title
+                    .earn__title-text Зарабатывать от 1000$ в месяц реально
+                    .earn__title-image
+                        img.earn__title-img(src="../images-min/earn/earn-image__1.png")
+                .earn__inner
+                    .earn__item 
+                        .earn__item-title Обучайся.
+                        .earn__item-text Наши администраторы помогут на твоем пути, предоставляя весь объем информации необходимой для работы, даже если ты начинаешь с нуля.
+                    .earn__item.earn__item--blue 
+                        .earn__item-title Будь собой.  
+                        .earn__item-text Каждый из нас уникален, в нас есть то, чего нет у других. Мы найдем и раскроем твои сильные стороны, которые помогут тебе в работе. Мы создаем личный бренд, а не работаем по шаблону.
+                    .earn__item.earn__item--blue
+                        .earn__item-title Дисциплина.
+                        .earn__item-text  Работай и зарабатывай. Правильно выстроенный график и целеустремленность - это путь к успеху.
+                    .earn__item 
+                        .earn__item-title Интересуйся.
+                        .earn__item-text Неподдельный интерес - тоже способ развития. Спрашивай, изучай, узнавай.
+            // блок "поддержка"
+            .support(id="blockSupport")
+                .support__title Наша команда администраторов поможет во всём остальном
+                .support__emoji
+                .support__emoji
+                .support-list
+                    .support-list__inner
+                        .support-list__item выплаты
+                        .support-list__item.support-list__item--main поддержка
+                        .support-list__item продвижение
+                        .support-list__item организация пространства
+                        .support-list__item.support-list__item--main обеспечение безопасности
+                        .support-list__item постановка ракурса
+                        //.support-list__item настройка оборудования
+                        .support-list__item.support-list__item--main создание шоу
         // блок "про безопасность"
-        .safety(id="blockSafety")
+        .safety.block(id="blockSafety")
             .safety__inner
-                .safety__inner
-                    .safety__image
-                        img.safety__img(src="../images-min/title/title-image__safety.png")
+                .safety__title
+                    img.safety__title-img(src="../images-min/title/title-image__safety.png")
                     //.ask__text Почему ты можешь быть уверен в своей анонимности?
                 .safety-item__inner
                     .safety-item
@@ -81,7 +81,7 @@ mixin content
                         .safety-item__title Локация
                         .safety-item__text Ты выбираешь на какие страны и регионы вести трансляцию, а твой личный менеджер подскажет как делать это максимально эффективно.
         // блок "флиртуй"
-        .flirt(id="blockFlirt")
+        .flirt.block(id="blockFlirt")
             .flirt__inner
                 .flirt__emoji
                     img.flirt__emoji-img(src="../images-min/flirt/flirt-image__1.png")
@@ -89,14 +89,14 @@ mixin content
                     img.flirt__emoji-img(src="../images-min/flirt/flirt-image__2.png")
                 .flirt__title Флиртуй. Общайся. Удивляй.
                 .flirt__subtitle Зарабатывай легко, заводя новые знакомства, рассказывая о себе и общаясь с другими пользователем. Быстро и легко - то как должны зарабатываться деньги.
-                a.button.button--flirt(href="#blockFeedback")
-                    span Хочу попробовать 
-                    .button-image + 
+                .button__inner
+                    a.button.button--flirt(href="#blockFeedback")
+                        span Хочу попробовать 
+                        .button-image + 
         // блок "тачки"
-        .gain(id="blockGain")
+        .gain.block(id="blockGain")
             .gain__title 
-                .gain__title-image
-                    img.gain__title-img(src="../images-min/title/title-image__gain.png")
+                img.gain__title-img(src="../images-min/title/title-image__gain.png")
             .gain__inner
                 .gain__left(id="gainLeft") <
                 .gain-item__inner(id="gainSlider")
@@ -111,10 +111,9 @@ mixin content
                         
                 .gain__right(id="gainRight") >
         // блок "на дому"
-        .home(id="blockHome")
+        .home.block(id="blockHome")
             .home__title 
-                .home__title-image
-                    img.home__title-img(src="../images-min/title/title-image__home.png")
+                img.home__title-img(src="../images-min/title/title-image__home.png")
             .home__inner.home__inner--first
                 .home__subtitle Что тебе понадобится:
                 .home-item
@@ -137,7 +136,7 @@ mixin content
                         .home-item__subtitle Желание зарабатывать и дисциплинированность 
             //.home__remark *Это те вещи, которые понадобятся тебе для старта. НО если у тебя нет оборудования - наша студия может его предоставить.  
         // блок "работай с нами"
-        .collab(id="blockCollab")
+        .collab.block(id="blockCollab")
             .collab__inner
                 .collab-item 
                     .collab-item__title Тех. Поддержку
@@ -159,7 +158,7 @@ mixin content
                 .collab__title-image
                     img.collab__title-img(src="../images-min/collab/collab-image__1.png")
         // блок "про деньги"
-        .money(id="blockMoney")
+        .money.block(id="blockMoney")
             .money__inner
                 .ask__inner
                     .ask__image
@@ -204,8 +203,10 @@ mixin content
                             .money-form__label Доход в месяц:
                             .money-form__result(id="dropdownResultDisplay") 800$   
         // блок "отзывы"
-        .review(id="blockReview")
+        .review.block(id="blockReview")
             .review__inner  
+                .review__title
+                    img.review__title-img(src="../images-min/title/title-image__review.png")
                 .review-item__inner
                     .review-item 
                         .review-item__header
@@ -213,10 +214,6 @@ mixin content
                                 img.review-item__header-img(src="../images-min/review/review-image__1.png")
                             .review-item__header-name Майк
                         .review-item__text Меня зовут Майк, мне 26. В этой индустрии я уже полтора года. До неё было несколько работ в том числе и гос.служба. Попал сюда осознанно и по своему желанию.. привела подруга по моей просьбе. Я изначально замечал за собой любовь к камере, расположенность к ведению в страничек в соц сетей и открытость в сексуальном плане. Вэбкам оказался находкой в этом плане. Еще одна причина прийти сюда- долги и нужда в быстрых деньгах. Все проблемы решились в течении года и стали появляться материальные блага и возможность дарить подарки себе и близким людям. Что касаемо студийного коллектива и руководства, хорошие, мотивирующие, душевные люди стремящиеся развиться и развивать других. Помогут советом, настройкой оборудования и просто добрым словом. Сама индустрия это отличная возможность получить дальнейшее финансирование для вашего бизнеса или же продолжить развиваться здесь.
-                    .ask__inner
-                        .ask__image
-                            img.ask__img(src="../images-min/title/title-image__review.png")
-                        .ask__text Отзывы наших моделей
                     .review-item
                         .review-item__header
                             .review-item__header-logo
@@ -230,7 +227,7 @@ mixin content
                             .review-item__header-name Тесса
                         .review-item__text Меня зовут Тесса, мне 20. Работаю на студии год. Я безумно рада, что приобрела здесь больше, чем просто работу. На многое повлиял коллектив, который всегда поддержит, выручит и всегда пойдет на встречу, что очень помогает моему карьерному росту и внутреннему спокойствию. Сюда хочется приезжать, потому что ты видишь результат и отдачу от руководства, их поддержку.              
         // блок "частые вопросы"
-        .faq(id="blockFaq")
+        .faq.block(id="blockFaq")
             .faq__title
                 img.faq__title-text(src="../images-min/faq/faq-title.png")
                 .faq__title-image
@@ -242,38 +239,40 @@ mixin content
                     .faq__item-text Мы 24/7 рядом и всегда готовы помочь. Работая в офисе или из дома, ты всегда получишь техническую помощь с любым возникшем вопросом. 
                 .faq__item
                     .faq__item-title Обучение
-                    .faq__item-text С нами не страшно начинать. Мы полностью подготовим тебя для выхода в трансляцию.
-                    .faq__item-text На протяжении всего твоего пути, наша команда будет курировать тебя и помогать. 
+                    .faq__item-text 
+                        span С нами не страшно начинать. Мы полностью подготовим тебя для выхода в трансляцию.
+                        span На протяжении всего твоего пути, наша команда будет курировать тебя и помогать. 
                 .faq__item
                     .faq__item-title Подготовка к работе
-                    .faq__item-text Вместе подбираем подходящие тебе площадки, помогаем с идеей шоу и ее реализацией.
-                    .faq__item-text Обучаем всему необходимому, чтобы можно было спокойно и уверено выйти в онлайн.
+                    .faq__item-text 
+                        span Вместе подбираем подходящие тебе площадки, помогаем с идеей шоу и ее реализацией.
+                        span Обучаем всему необходимому, чтобы можно было спокойно и уверено выйти в онлайн.
                 .faq__item
                     .faq__item-title Выплаты
                     .faq__item-text Ежедневные выплаты для новых моделей. Выплаты без задержек два раза в месяц с возможностью брать авансы.
             .faq__item-right(id="sliderRight") > 
         // блок "видео"
-        .video
+        .video.block
             .video__title 
-                .video__title-image
-                    img.video__title-img(src="../images-min/title/title-image__rooms.png")
+                img.video__title-img(src="../images-min/title/title-image__rooms.png")
             .video__item
                 video.video__item-source(controls="controls" autoplay)
                     source(src="../src/video/test.mp4")
         // блок "обратная связь"
-        .feedback(id="blockFeedback")
+        .feedback.block(id="blockFeedback")
             .feedback__inner
                 .feedback__title Стать моделью
                 .feedback__subtitle Начни зарабатывать вместе с нами!
                 form.feedback__form(action="https://api.web3forms.com/submit" method="POST")
                     input(type="hidden" name="access_key" value="c8b25867-60a2-4a15-a196-598f960cc46d")
                     label.feedback__label Ваше имя:
-                        input.textform.feedback__input(type="text" name="name")
+                        input.textform.feedback__input(type="text" name="name" )
                     label.feedback__label Номер телефона:
-                        input.textform.feedback__input(type="phone" name="phone")
+                        input.textform.feedback__input(type="phone" name="phone" value="+7")
                     label.feedback__label Телеграм:
-                        input.textform.feedback__input(type="text" name="telegram")
-                    button.button.button--feedback(type="submit") Отправить
+                        input.textform.feedback__input(type="text" name="telegram" value="@")
+                    .button__inner
+                        button.button.button--feedback(type="submit") Отправить
         // боковая навигация
         .side-nav__placeholder.side-nav__placeholder--hidden(id="sidenavPlaceholder")
         .side-nav.side-nav--hidden(id="sidenav")
